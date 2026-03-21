@@ -134,8 +134,37 @@
 
     .hero-image {
       min-height: 480px;
-      background: linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.38)), url('https://lh3.googleusercontent.com/sitesv/APaQ0SR0Q-TKpbDVMPKFBST1cyqPPw1GuX2qcmrKOVT-qDl7hNpgzZfyH4u7avOfMardiyyPmLKYbbTQDIilLexgUb_kmXPQACW9cLdHaaZPkRi7Cuh9zdYgy9CBoKQyaZWyWVuSHluX3yObpV1UVtK8k-6gqXgnGUlxYBKbO4Js7he_23I2zR2qzceXir4%3Dw16383') center/cover;
       border-radius: 2px;
+      background:
+        linear-gradient(135deg, rgba(207,198,184,0.10), rgba(207,198,184,0.02)),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: end;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::before {
+      content: "MENVIC";
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: clamp(2rem, 6vw, 5rem);
+      line-height: 1;
+      color: rgba(242, 240, 234, 0.08);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-image::after {
+      content: "Arquitectura, construcción y desarrollo técnico";
+      position: relative;
+      z-index: 1;
+      color: var(--text);
+      font-size: 1rem;
+      max-width: 18ch;
     }
 
     section {
@@ -175,8 +204,17 @@
 
     .card-image {
       aspect-ratio: 4 / 3;
-      background-size: cover;
-      background-position: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0)),
+        linear-gradient(135deg, rgba(207,198,184,0.12), rgba(207,198,184,0.03));
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: end;
+      padding: 18px;
+      color: var(--text);
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .card-body {
@@ -277,7 +315,7 @@
           </p>
           <a class="button" href="#proyectos">Ver proyectos</a>
         </div>
-        <div class="hero-image" aria-label="Imagen principal de arquitectura"></div>
+        <div class="hero-image" aria-label="Presentación visual de Menvic Arquitectura"></div>
       </div>
     </section>
 
@@ -292,7 +330,7 @@
 
         <div class="projects">
           <article class="card">
-            <div class="card-image" style="background-image:url('https://lh3.googleusercontent.com/sitesv/APaQ0SS23aSTBoPYV8dI_UdDGhcIDntbpDMj_WYXr5Y-khg559xtME5OT9oostRuKb6vHTAuE0vQKW1fqMXYVzr27zGa2FWzA2xaHDXYm5fWXfo0TUKh2n50apiv2wVyulSLP8rd7E2-nNuqfx8KSjYnD6kVydJBE7JmFUtT8cpbVPCc5nzI47Gh7Wy5cuT3IQAX_ANvjZTlDYSKAYUJ0gXSvmQjICuGj76oJCgi%3Dw1280');"></div>
+            <div class="card-image">LDS Temple</div>
             <div class="card-body">
               <h3>LDS Temple</h3>
               <p>Diseño y elaboración de planos de construcción en colaboración con MHTN Architects para templos de la Iglesia de Jesucristo de los Santos de los Últimos Días, incorporando modelado BIM para mejorar coordinación y ejecución.</p>
@@ -300,7 +338,7 @@
           </article>
 
           <article class="card">
-            <div class="card-image" style="background-image:url('https://lh3.googleusercontent.com/sitesv/APaQ0SSWDlcqcFmzIM56A-XVSDiq6vRbwuDNZ4jOzx83X7VQXy-xTyUUnmb6HkGB2o89YURmNdQTyLyoL21ee1GQTvMv5EVLQOV14JTkRoORQ7Bd-ynfpjvSWJs0xVzsGm5LbBaYdFRAC__S0iP9U0o5hTbTBDvdujOd8_kq5i-C5HvsEPnleyERD59-BxXNw9EHVUa95MjHHaq85jQ%3Dw1280');"></div>
+            <div class="card-image">Avícola Sofía</div>
             <div class="card-body">
               <h3>Avícola Sofía</h3>
               <p>Construcción de infraestructura complementaria para planta industrial, incluyendo oficinas, baños, vestidores, comedor, talleres, sala de calderas y áreas técnicas, dentro de un desarrollo corporativo de gran escala.</p>
@@ -308,7 +346,7 @@
           </article>
 
           <article class="card">
-            <div class="card-image" style="background-image:url('https://lh3.googleusercontent.com/sitesv/APaQ0STuTPzJxSF0ygoZlKNPiz9wWPcNhgq5wfeJkolUkvgkPDvh3bq8t5JaJZUFMjFClWnLv6WvtduUw6UiOXZbfdmsPwQN_xMa9Hux_ZrxPo0GXR27TbwILxA3ckHTx8el4RzikPdaL_4-Hty5hFG16kofcIdmOKYmU1mmh6RVbczkC7MCibW1bTiXWmeuiylnzvnmTkMH6hCPlv0%3Dw1280');"></div>
+            <div class="card-image">PRODIMSA</div>
             <div class="card-body">
               <h3>PRODIMSA</h3>
               <p>Diseño y construcción de sede social concebida con enfoque integral, incorporando recreación, ocio y servicios complementarios para fortalecer el bienestar y la interacción dentro del entorno corporativo.</p>
