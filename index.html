@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menvic Arquitectura | Portfolio</title>
-  <meta name="description" content="Portfolio de Menvic Arquitectura: proyectos, enfoque, servicios y contacto." />
+  <title>Menvic Arquitectura</title>
+  <meta name="description" content="Menvic Arquitectura: arquitectura, construcción, BIM y Revit avanzado." />
   <style>
     :root {
       --bg: #0f1113;
@@ -197,6 +197,13 @@
       gap: 22px;
     }
 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 720px;
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -232,8 +239,7 @@
       font-size: 0.96rem;
     }
 
-    .about-grid,
-    .contact-grid {
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
@@ -294,8 +300,7 @@
       <nav>
         <ul>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#estudio">Estudio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
+          
           <li><a href="#contacto">Contacto</a></li>
           <li><a href="https://github.com/richimenvic/pyMenvic" target="_blank" rel="noopener noreferrer">pyMenvic</a></li>
         </ul>
@@ -308,12 +313,11 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Menvic / Arquitectura</div>
-          <h1>Arquitectura pensada con claridad, criterio y precisión.</h1>
+          <h1>Arquitectura, construcción y desarrollo técnico.</h1>
           <p>
-            Menvic Arquitectura entiende cada proyecto como una síntesis entre idea, orden espacial y resolución técnica.
-            El interés no está en recargar, sino en construir espacios bien proporcionados, serenos y coherentes, con una base sólida en BIM y Revit avanzado.
+            Menvic desarrolla proyectos con una visión clara, una base técnica sólida y experiencia en BIM y Revit avanzado.
           </p>
-          <a class="button" href="#proyectos">Ver proyectos</a>
+          <a class="button" href="#contacto">Contacto</a>
         </div>
         <div class="hero-image" aria-label="Presentación visual de Menvic Arquitectura"></div>
       </div>
@@ -324,7 +328,7 @@
         <div class="section-head">
           <div class="section-title">Proyectos</div>
           <div class="section-text">
-            Una selección de proyectos reales de diseño, construcción y desarrollo técnico, donde arquitectura, ejecución y coordinación se integran en una misma línea de trabajo.
+            Algunos proyectos desarrollados desde diseño, construcción y coordinación técnica.
           </div>
         </div>
 
@@ -333,7 +337,7 @@
             <div class="card-image">LDS Temple</div>
             <div class="card-body">
               <h3>LDS Temple</h3>
-              <p>Diseño y elaboración de planos de construcción en colaboración con MHTN Architects para templos de la Iglesia de Jesucristo de los Santos de los Últimos Días, incorporando modelado BIM para mejorar coordinación y ejecución.</p>
+              <p>Diseño y planos de construcción con apoyo BIM para mejorar coordinación y ejecución.</p>
             </div>
           </article>
 
@@ -341,7 +345,7 @@
             <div class="card-image">Avícola Sofía</div>
             <div class="card-body">
               <h3>Avícola Sofía</h3>
-              <p>Construcción de infraestructura complementaria para planta industrial, incluyendo oficinas, baños, vestidores, comedor, talleres, sala de calderas y áreas técnicas, dentro de un desarrollo corporativo de gran escala.</p>
+              <p>Construcción de infraestructura complementaria para planta industrial y áreas técnicas.</p>
             </div>
           </article>
 
@@ -349,69 +353,14 @@
             <div class="card-image">PRODIMSA</div>
             <div class="card-body">
               <h3>PRODIMSA</h3>
-              <p>Diseño y construcción de sede social concebida con enfoque integral, incorporando recreación, ocio y servicios complementarios para fortalecer el bienestar y la interacción dentro del entorno corporativo.</p>
+              <p>Diseño y construcción de sede social con enfoque integral y desarrollo técnico.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="estudio">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-title">Perfil</div>
-          <div class="section-text">
-            Una manera de trabajar donde el criterio formal y la lógica constructiva avanzan juntos, desde la idea inicial hasta la definición técnica.
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="info-box">
-            <h3>Sobre el estudio</h3>
-            <p>
-              Menvic Arquitectura desarrolla proyectos donde la claridad espacial, la proporción y la lógica material tienen un papel central.
-              Cada decisión busca responder al uso real, al contexto y a una idea arquitectónica legible, sin recursos innecesarios.
-            </p>
-          </div>
-          <div class="info-box">
-            <h3>Enfoque</h3>
-            <ul>
-              <li>Claridad espacial y formal</li>
-              <li>Luz natural como parte del proyecto</li>
-              <li>Materialidad contenida y coherente</li>
-              <li>Documentación técnica precisa</li>
-              <li>BIM y Revit como herramientas de control</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-title">Servicios</div>
-          <div class="section-text">
-            Servicios orientados a desarrollar proyectos con una lectura clara, una base técnica sólida y una comunicación precisa durante todo el proceso.
-          </div>
-        </div>
-
-        <div class="projects">
-          <div class="info-box">
-            <h3>Arquitectura</h3>
-            <p>Proyectos residenciales, reformas y piezas de escala contenida desarrollados con atención a la idea, la proporción y la resolución del detalle.</p>
-          </div>
-          <div class="info-box">
-            <h3>Interiorismo</h3>
-            <p>Diseño interior centrado en la atmósfera, la continuidad espacial y la selección precisa de materiales, luz y mobiliario.</p>
-          </div>
-          <div class="info-box">
-            <h3>BIM / Revit</h3>
-            <p>Desarrollo BIM y Revit avanzado para modelado, documentación, coordinación y control técnico del proyecto con mayor consistencia.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section id="contacto">
       <div class="wrap">
@@ -424,18 +373,12 @@
 
         <div class="contact-grid">
           <div class="info-box">
-            <h3>Datos</h3>
+            <h3>Contacto</h3>
             <p>Email: contacto@menvic.com</p>
             <p>Instagram: @richi_rm</p>
-            <p>WhatsApp: +34 608 856 568</p>
+            <p>Teléfono: +34 608 856 568</p>
             <p>Ubicación: España</p>
-          </div>
-          <div class="info-box">
-            <h3>pyMenvic</h3>
-            <p>
-              pyMenvic reúne herramientas y desarrollos propios vinculados a automatización, flujos de trabajo y procesos técnicos aplicados al proyecto.
-              <a href="https://github.com/richimenvic/pyMenvic" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-            </p>
+            <p><a href="https://github.com/richimenvic/pyMenvic" target="_blank" rel="noopener noreferrer">Ver pyMenvic</a></p>
           </div>
         </div>
       </div>
