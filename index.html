@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudio de Arquitectura</title>
+  <meta name="description" content="Portfolio de arquitectura" />
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --text: #1f1f1f;
+      --muted: #666;
+      --line: #ddd6ca;
+      --card: #ffffff;
+      --accent: #2f4f4f;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 243, 238, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      z-index: 20;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    nav a:hover,
+    .button:hover {
+      opacity: 0.8;
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 5rem);
+      line-height: 0.98;
+      margin: 0 0 18px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--text);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .hero-image {
+      min-height: 480px;
+      background: linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)), url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border-radius: 2px;
+    }
+
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .card-image {
+      aspect-ratio: 4 / 3;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .info-box {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .info-box p,
+    .info-box li {
+      color: var(--muted);
+    }
+
+    .info-box ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-head,
+      .projects,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="#inicio" class="brand">RICARDO / ARQUITECTURA</a>
+      <nav>
+        <ul>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#estudio">Estudio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" style="border-top:none;">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Portfolio / Estudio</div>
+          <h1>Arquitectura clara, sobria y bien construida.</h1>
+          <p>
+            Diseñamos espacios contemporáneos con atención al detalle, la luz, la materialidad y la relación entre uso y forma.
+            Esta plantilla está pensada para un arquitecto o estudio pequeño que quiera una web elegante y fácil de subir a GitHub.
+          </p>
+          <a class="button" href="#proyectos">Ver proyectos</a>
+        </div>
+        <div class="hero-image" aria-label="Imagen principal de arquitectura"></div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-title">Proyectos</div>
+          <div class="section-text">
+            Sustituye estas tres tarjetas por tus obras, concursos, reformas o visualizaciones. Puedes cambiar imágenes, textos y enlaces fácilmente.
+          </div>
+        </div>
+
+        <div class="projects">
+          <article class="card">
+            <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80');"></div>
+            <div class="card-body">
+              <h3>Vivienda Patio</h3>
+              <p>Reforma integral de vivienda unifamiliar con patio central, luz natural continua y materiales neutros.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80');"></div>
+            <div class="card-body">
+              <h3>Edificio Residencial</h3>
+              <p>Propuesta de vivienda colectiva con fachada modular, terrazas profundas y estrategia pasiva de sombreado.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1000&q=80');"></div>
+            <div class="card-body">
+              <h3>Interior Comercial</h3>
+              <p>Diseño interior para espacio comercial con recorrido limpio, iluminación puntual y mobiliario a medida.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="estudio">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-title">Estudio</div>
+          <div class="section-text">
+            Aquí puedes contar quién eres, tu enfoque y tu forma de trabajar. Mantén el texto breve y profesional.
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="info-box">
+            <h3>Sobre mí</h3>
+            <p>
+              Ricardo es arquitecto y desarrolla proyectos residenciales, interiores y piezas de diseño con una aproximación precisa,
+              funcional y atenta a la atmósfera del espacio.
+            </p>
+          </div>
+          <div class="info-box">
+            <h3>Enfoque</h3>
+            <ul>
+              <li>Diseño claro y atemporal</li>
+              <li>Atención al detalle constructivo</li>
+              <li>Procesos ordenados y visuales</li>
+              <li>Comunicación directa con el cliente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-title">Servicios</div>
+          <div class="section-text">
+            Puedes adaptar esta sección a tus servicios reales: proyecto básico, ejecutivo, interiorismo, visualización, consultoría o licencias.
+          </div>
+        </div>
+
+        <div class="projects">
+          <div class="info-box">
+            <h3>Arquitectura</h3>
+            <p>Proyecto, desarrollo técnico, coordinación y definición espacial para vivienda, reforma o pequeño equipamiento.</p>
+          </div>
+          <div class="info-box">
+            <h3>Interiorismo</h3>
+            <p>Diseño interior, materiales, iluminación, mobiliario y mejora de la experiencia espacial.</p>
+          </div>
+          <div class="info-box">
+            <h3>Visualización</h3>
+            <p>Imágenes, diagramas y presentaciones claras para comunicar el proyecto de manera precisa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-title">Contacto</div>
+          <div class="section-text">
+            Cambia este bloque por tus datos reales. También puedes enlazar tu Instagram, LinkedIn o correo profesional.
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="info-box">
+            <h3>Datos</h3>
+            <p>Email: hola@tuestudio.com</p>
+            <p>Instagram: @tuestudio</p>
+            <p>Ciudad: Madrid</p>
+          </div>
+          <div class="info-box">
+            <h3>Siguiente paso</h3>
+            <p>
+              Cuando reemplaces textos e imágenes, sube este archivo como <strong>index.html</strong> a un repositorio de GitHub y actívalo con GitHub Pages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Ricardo Arquitectura. Plantilla base para GitHub Pages.</div>
+  </footer>
+</body>
+</html>
