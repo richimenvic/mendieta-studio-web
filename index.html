@@ -7,141 +7,206 @@
   <meta name="description" content="Menvic Arquitectura: arquitectura, construcción, BIM y Revit avanzado." />
   <style>
     :root {
-      --bg: #0f1113;
-      --text: #f2f0ea;
-      --muted: #b2b0aa;
-      --line: #2a2e33;
-      --card: #171a1d;
-      --accent: #cfc6b8;
+      --bg: #0b0c0c;
+      --bg-soft: #111312;
+      --card: #151716;
+      --card-strong: #1b1d1b;
+      --text: #f4f0e8;
+      --muted: #aaa49a;
+      --muted-soft: #7d776e;
+      --line: rgba(244, 240, 232, 0.12);
+      --line-strong: rgba(244, 240, 232, 0.22);
+      --accent: #d9c7a6;
+      --accent-soft: rgba(217, 199, 166, 0.13);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
       --max: 1180px;
+      --radius: 22px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(217, 199, 166, 0.12), transparent 28rem),
+        linear-gradient(180deg, #0b0c0c 0%, #0f1110 48%, #090a0a 100%);
+      line-height: 1.65;
+      text-rendering: geometricPrecision;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(244, 240, 232, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 240, 232, 0.025) 1px, transparent 1px);
+      background-size: 88px 88px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 68%);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
-      width: min(92%, var(--max));
+      width: min(calc(100% - 40px), var(--max));
       margin: 0 auto;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: rgba(15, 17, 19, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
       z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(11, 12, 12, 0.78);
+      backdrop-filter: blur(18px);
     }
 
     .nav {
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
-      gap: 20px;
+      gap: 28px;
     }
 
     .brand {
-      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand::before {
+      content: "";
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line-strong);
+      background: linear-gradient(135deg, var(--accent-soft), rgba(255, 255, 255, 0.02));
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 22px;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
       padding: 0;
       margin: 0;
       flex-wrap: wrap;
     }
 
     nav a {
-      font-size: 0.95rem;
+      display: inline-flex;
+      padding: 9px 12px;
+      border-radius: 999px;
       color: var(--muted);
+      font-size: 0.86rem;
+      transition: color 0.2s ease, background 0.2s ease;
     }
 
-    nav a:hover,
-    .button:hover {
-      opacity: 0.8;
+    nav a:hover {
+      color: var(--text);
+      background: rgba(244, 240, 232, 0.06);
     }
 
     .hero {
-      padding: 84px 0 56px;
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      padding: clamp(64px, 9vw, 126px) 0 clamp(54px, 8vw, 96px);
+      border-top: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 36px;
-      align-items: end;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      gap: clamp(36px, 6vw, 82px);
+      align-items: center;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .section-title,
+    .meta-label {
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(2.3rem, 5vw, 5rem);
-      line-height: 0.98;
-      margin: 0 0 18px;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      color: var(--accent);
       font-weight: 700;
     }
 
+    .eyebrow { margin-bottom: 22px; }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 8vw, 7.25rem);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+      font-weight: 400;
+    }
+
     .hero p {
-      max-width: 58ch;
+      max-width: 62ch;
       color: var(--muted);
-      font-size: 1.05rem;
-      margin: 0 0 26px;
+      font-size: clamp(1rem, 1.4vw, 1.17rem);
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .button {
-      display: inline-block;
-      padding: 12px 18px;
-      border: 1px solid var(--text);
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(244, 240, 232, 0.04);
+      font-size: 0.9rem;
+      font-weight: 650;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
 
     .button:hover {
+      transform: translateY(-2px);
       background: var(--text);
       color: var(--bg);
-      opacity: 1;
+      border-color: var(--text);
+    }
+
+    .button.secondary {
+      color: var(--muted);
+      background: transparent;
     }
 
     .hero-image {
-      min-height: 480px;
-      border-radius: 2px;
-      background:
-        linear-gradient(135deg, rgba(207,198,184,0.10), rgba(207,198,184,0.02)),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      min-height: clamp(420px, 52vw, 620px);
       border: 1px solid var(--line);
-      display: flex;
-      align-items: end;
-      padding: 28px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(11, 12, 12, 0.04), rgba(11, 12, 12, 0.74)),
+        linear-gradient(135deg, rgba(217, 199, 166, 0.24), rgba(255, 255, 255, 0.02) 46%, rgba(217, 199, 166, 0.10)),
+        var(--card);
+      box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
@@ -149,136 +214,180 @@
     .hero-image::before {
       content: "MENVIC";
       position: absolute;
-      top: 24px;
-      right: 24px;
-      font-size: clamp(2rem, 6vw, 5rem);
-      line-height: 1;
-      color: rgba(242, 240, 234, 0.08);
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      inset: 34px auto auto 34px;
+      color: rgba(244, 240, 232, 0.08);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.8;
+      letter-spacing: -0.06em;
     }
 
     .hero-image::after {
-      content: "Arquitectura, construcción y desarrollo técnico";
-      position: relative;
-      z-index: 1;
+      content: "Arquitectura · Construcción · BIM";
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line-strong);
       color: var(--text);
-      font-size: 1rem;
-      max-width: 18ch;
+      font-size: clamp(1.05rem, 2vw, 1.45rem);
+      letter-spacing: -0.02em;
+    }
+
+    .visual-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.7;
+      background:
+        linear-gradient(90deg, transparent 0 18%, rgba(244, 240, 232, 0.12) 18% 18.15%, transparent 18.15% 100%),
+        linear-gradient(90deg, transparent 0 62%, rgba(244, 240, 232, 0.08) 62% 62.1%, transparent 62.1% 100%),
+        linear-gradient(180deg, transparent 0 42%, rgba(244, 240, 232, 0.10) 42% 42.15%, transparent 42.15% 100%);
     }
 
     section {
-      padding: 70px 0;
+      position: relative;
+      padding: clamp(70px, 9vw, 118px) 0;
       border-top: 1px solid var(--line);
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-
-    .section-title {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 80px);
+      margin-bottom: clamp(30px, 5vw, 56px);
+      align-items: start;
     }
 
     .section-text {
+      max-width: 760px;
       color: var(--muted);
-      max-width: 65ch;
+      font-size: clamp(1.08rem, 1.7vw, 1.5rem);
+      line-height: 1.55;
+      letter-spacing: -0.025em;
     }
 
     .projects {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      max-width: 720px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .card-image {
-      aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0)),
-        linear-gradient(135deg, rgba(207,198,184,0.12), rgba(207,198,184,0.03));
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      align-items: end;
-      padding: 18px;
-      color: var(--text);
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .card-body {
-      padding: 18px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .info-box {
-      padding: 24px;
-      background: var(--card);
-      border: 1px solid var(--line);
-    }
-
-    .info-box h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    .info-box p,
-    .info-box li {
-      color: var(--muted);
-    }
-
-    .info-box ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    footer {
-      padding: 28px 0 48px;
-      color: var(--muted);
-      font-size: 0.92rem;
+      gap: 18px;
     }
 
     .card,
     .info-box {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)), var(--card);
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+    }
+
+    .card {
+      min-height: 100%;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--line-strong);
+      background: linear-gradient(180deg, rgba(217, 199, 166, 0.08), rgba(255, 255, 255, 0.014)), var(--card);
+    }
+
+    .card-image {
+      aspect-ratio: 4 / 3.15;
+      position: relative;
+      display: flex;
+      align-items: end;
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background:
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.48)),
+        linear-gradient(135deg, rgba(217, 199, 166, 0.22), rgba(244, 240, 232, 0.04) 44%, rgba(0, 0, 0, 0.18));
+    }
+
+    .card-image::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(244, 240, 232, 0.14);
+      border-bottom: 0;
+    }
+
+    .card-body { padding: 24px; }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+    }
+
+    .card p,
+    .info-box p,
+    .info-box li {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .info-box {
+      padding: clamp(24px, 4vw, 38px);
+    }
+
+    .info-box h3 {
+      margin-bottom: 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 6px;
+    }
+
+    .contact-list p {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-list p:last-child { border-bottom: 0; padding-bottom: 0; }
+    .contact-list span:first-child { color: var(--muted-soft); }
+    .contact-list a:hover { color: var(--accent); }
+
+    footer {
+      padding: 30px 0 52px;
+      color: var(--muted-soft);
+      font-size: 0.88rem;
     }
 
     @media (max-width: 980px) {
+      .hero { min-height: auto; }
       .hero-grid,
       .section-head,
       .projects,
@@ -287,9 +396,21 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-image {
-        min-height: 320px;
-      }
+      .hero-grid { align-items: start; }
+      .hero-image { min-height: 380px; }
+      .section-head { gap: 16px; }
+    }
+
+    @media (max-width: 680px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; gap: 12px; }
+      nav ul { justify-content: flex-start; gap: 2px; }
+      nav a { padding: 7px 9px; font-size: 0.8rem; }
+      h1 { font-size: clamp(3rem, 18vw, 4.7rem); }
+      .hero { padding-top: 56px; }
+      .hero-image { min-height: 320px; border-radius: 18px; }
+      .card, .info-box { border-radius: 18px; }
+      .contact-list p { display: grid; gap: 3px; }
     }
   </style>
 </head>
@@ -297,10 +418,9 @@
   <header>
     <div class="wrap nav">
       <a href="#inicio" class="brand">MENVIC / ARQUITECTURA</a>
-      <nav>
+      <nav aria-label="Principal">
         <ul>
           <li><a href="#proyectos">Proyectos</a></li>
-          
           <li><a href="#contacto">Contacto</a></li>
           <li><a href="https://github.com/richimenvic/pyMenvic" target="_blank" rel="noopener noreferrer">pyMenvic</a></li>
         </ul>
@@ -309,7 +429,7 @@
   </header>
 
   <main>
-    <section class="hero" id="inicio" style="border-top:none;">
+    <section class="hero" id="inicio">
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Menvic / Arquitectura</div>
@@ -318,9 +438,14 @@
             Menvic desarrolla proyectos con una visión clara, una base técnica sólida y experiencia en BIM y Revit avanzado.
             El enfoque combina arquitectura, construcción y desarrollo técnico con una forma de trabajar directa, precisa y bien coordinada.
           </p>
-          <a class="button" href="#contacto">Contacto</a>
+          <div class="actions">
+            <a class="button" href="#contacto">Contacto</a>
+            <a class="button secondary" href="#proyectos">Ver proyectos</a>
+          </div>
         </div>
-        <div class="hero-image" aria-label="Presentación visual de Menvic Arquitectura"></div>
+        <div class="hero-image" aria-label="Presentación visual de Menvic Arquitectura">
+          <div class="visual-lines" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
@@ -361,8 +486,6 @@
       </div>
     </section>
 
-    
-
     <section id="contacto">
       <div class="wrap">
         <div class="section-head">
@@ -374,18 +497,23 @@
 
         <div class="contact-grid">
           <div class="info-box">
-            <h3>Perfil</h3>
+            <div class="meta-label">Perfil</div>
+            <h3>Estudio técnico con mirada arquitectónica.</h3>
             <p>
               Menvic Arquitectura trabaja desde Pozoblanco, Córdoba, desarrollando proyectos con una aproximación sobria, técnica y bien resuelta.
             </p>
           </div>
+
           <div class="info-box">
+            <div class="meta-label">Datos</div>
             <h3>Contacto</h3>
-            <p>Email: contacto@menvic.com</p>
-            <p>Instagram: @richi_rm</p>
-            <p>Teléfono: +34 608 856 568</p>
-            <p>Ubicación: Pozoblanco, Córdoba</p>
-            <p><a href="https://github.com/richimenvic/pyMenvic" target="_blank" rel="noopener noreferrer">Ver pyMenvic</a></p>
+            <div class="contact-list">
+              <p><span>Email</span><a href="mailto:contacto@menvic.com">contacto@menvic.com</a></p>
+              <p><span>Instagram</span><a href="https://www.instagram.com/richi_rm" target="_blank" rel="noopener noreferrer">@richi_rm</a></p>
+              <p><span>Teléfono</span><a href="tel:+34608856568">+34 608 856 568</a></p>
+              <p><span>Ubicación</span><span>Pozoblanco, Córdoba</span></p>
+              <p><span>Herramientas</span><a href="https://github.com/richimenvic/pyMenvic" target="_blank" rel="noopener noreferrer">Ver pyMenvic</a></p>
+            </div>
           </div>
         </div>
       </div>
