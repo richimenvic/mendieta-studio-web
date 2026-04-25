@@ -216,30 +216,7 @@ h3{font-size:clamp(1.24rem,2vw,1.8rem);line-height:1.1}
 }
 
 .page-hero{padding:clamp(82px,9vw,126px) 0}
-.legal-top-nav{
-  margin-bottom:26px;
-  padding-bottom:18px;
-  border-bottom:1px solid var(--line);
-}
-.legal-back-link{
-  display:inline-block;
-  color:var(--muted);
-  font-size:.74rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-.legal-back-link:hover{color:var(--ink)}
-.legal-page-links{
-  margin-top:14px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px 18px;
-  font-size:.67rem;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.legal-page-links a:hover{color:var(--ink)}
+.legal-page{padding-top:clamp(56px,7vw,86px)}
 .page-title{max-width:980px}
 .wide-image{min-height:clamp(380px,48vw,680px);margin-top:46px}
 .details{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
@@ -278,9 +255,6 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   .wrap{width:min(calc(100% - 32px),var(--max))}
   .nav{min-height:72px}
   .nav-links{display:none}
-  .legal-top-nav{margin-bottom:22px;padding-bottom:16px}
-  .legal-back-link{font-size:.7rem}
-  .legal-page-links{font-size:.64rem;gap:10px 14px}
   .brand strong{font-size:1rem}
   h1{font-size:clamp(3.05rem,16vw,4.6rem)}
   h2{font-size:clamp(2rem,11vw,3.1rem)}
