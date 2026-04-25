@@ -99,12 +99,23 @@ h3{font-size:clamp(1.2rem,1.8vw,1.62rem);line-height:1.2;letter-spacing:-.015em}
   overflow:hidden;
 }
 
+.media-img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.hero-image > .media-img{
+  position:absolute;
+  inset:0;
+}
+
 .hero-image{min-height:clamp(520px,58vw,760px)}
 
 .hero-image-photo{
   background:
     linear-gradient(180deg,rgba(12,12,12,.22),rgba(12,12,12,.38)),
-    url('img/imagen1.jpg') center/cover no-repeat,
     var(--soft);
 }
 
