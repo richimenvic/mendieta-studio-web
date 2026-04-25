@@ -596,6 +596,21 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   margin-bottom:10px;
 }
 
+.project-title-extended{
+  max-width:18ch;
+  font-size:clamp(1.52rem,2.35vw,2.12rem);
+  line-height:1.14;
+  letter-spacing:-.02em;
+}
+
+.project-hero-title{
+  max-width:14ch;
+  font-size:clamp(2.18rem,5vw,4.22rem);
+  line-height:1.06;
+  letter-spacing:-.026em;
+  margin-bottom:24px;
+}
+
 .project-card-content p{
   margin:0 0 20px;
   color:var(--muted);
