@@ -42,30 +42,46 @@
             <input type='hidden' name='access_key' value='9d064af6-bb40-4732-9a1f-519b6da716a6'>
             <input type='checkbox' name='botcheck' class='hidden-field' tabindex='-1' autocomplete='off'>
 
-            <label for='fullName'>Nombre completo</label>
-            <input id='fullName' name='name' type='text' required autocomplete='name'>
+            <div class='contact-form-grid'>
+              <div class='form-field'>
+                <label for='fullName'>Nombre completo</label>
+                <input id='fullName' name='name' type='text' required autocomplete='name' placeholder='Nombre y apellidos'>
+              </div>
 
-            <label for='email'>Correo electrónico</label>
-            <input id='email' name='email' type='email' required autocomplete='email'>
+              <div class='form-field'>
+                <label for='email'>Correo electrónico</label>
+                <input id='email' name='email' type='email' required autocomplete='email' placeholder='correo@estudio.com'>
+              </div>
 
-            <label for='company'>Empresa / Organización <span>(opcional)</span></label>
-            <input id='company' name='company' type='text' autocomplete='organization'>
+              <div class='form-field form-field--full'>
+                <label for='company'>Empresa / Organización <span>(opcional)</span></label>
+                <input id='company' name='company' type='text' autocomplete='organization' placeholder='Nombre de empresa'>
+              </div>
 
-            <label for='inquiryType'>Tipo de consulta</label>
-            <select id='inquiryType' name='inquiry_type' required>
-              <option value='' selected disabled>Seleccione una opción</option>
-              <option value='Proyecto residencial'>Proyecto residencial</option>
-              <option value='Proyecto comercial'>Proyecto comercial</option>
-              <option value='Colaboración profesional'>Colaboración profesional</option>
-              <option value='Consultoría técnica'>Consultoría técnica</option>
-              <option value='Otro'>Otro</option>
-            </select>
+              <div class='form-field form-field--full'>
+                <label for='inquiryType'>Tipo de consulta</label>
+                <div class='select-wrap'>
+                  <select id='inquiryType' name='inquiry_type' required>
+                    <option value='' selected disabled>Seleccione una opción</option>
+                    <option value='Proyecto residencial'>Proyecto residencial</option>
+                    <option value='Proyecto comercial'>Proyecto comercial</option>
+                    <option value='Colaboración profesional'>Colaboración profesional</option>
+                    <option value='Consultoría técnica'>Consultoría técnica</option>
+                    <option value='Otro'>Otro</option>
+                  </select>
+                </div>
+              </div>
 
-            <label for='message'>Mensaje</label>
-            <textarea id='message' name='message' rows='6' required></textarea>
+              <div class='form-field form-field--full'>
+                <label for='message'>Mensaje</label>
+                <textarea id='message' name='message' rows='6' required placeholder='Cuéntenos brevemente el alcance, ubicación y plazos estimados de su proyecto.'></textarea>
+              </div>
+            </div>
 
-            <button type='submit' id='submitButton'>Enviar consulta</button>
-            <p id='formStatus' class='form-status' aria-live='polite'></p>
+            <div class='contact-form-actions'>
+              <button type='submit' id='submitButton'>Enviar consulta</button>
+              <p id='formStatus' class='form-status' aria-live='polite'></p>
+            </div>
           </form>
         </div>
       </div>
