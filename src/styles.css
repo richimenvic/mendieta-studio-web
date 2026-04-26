@@ -127,17 +127,6 @@ h3{font-size:clamp(1.2rem,1.8vw,1.62rem);line-height:1.2;letter-spacing:-.015em}
   border:1px solid rgba(255,255,255,.4);
 }
 
-.hero-image figcaption{
-  position:absolute;
-  left:26px;
-  bottom:20px;
-  margin:0;
-  font-size:.65rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#f5f0e8;
-}
-
 .section{padding:clamp(112px,11vw,184px) 0;border-top:1px solid var(--line)}
 .section-head{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(42px,8vw,120px);margin-bottom:76px}
 .section-copy{color:var(--muted);font-size:clamp(1.05rem,1.5vw,1.32rem);line-height:1.65;max-width:820px;letter-spacing:-.015em}
@@ -838,6 +827,15 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   margin-bottom:0;
 }
 
+.home-cta-section{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:28px;
+  align-items:end;
+  border-top:1px solid var(--line);
+  padding-top:28px;
+}
+
 .project-detail-media{
   margin:0 0 28px;
   min-height:clamp(280px,42vw,560px);
@@ -846,7 +844,8 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
 @media(max-width:1080px){
   .home-project-grid,
   .home-services-grid,
-  .home-about-grid{
+  .home-about-grid,
+  .home-cta-section{
     grid-template-columns:1fr;
   }
 }
