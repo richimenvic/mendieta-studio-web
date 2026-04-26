@@ -188,7 +188,7 @@ h3{font-size:clamp(1.2rem,1.8vw,1.62rem);line-height:1.2;letter-spacing:-.015em}
 .media-temple{
   background:
     linear-gradient(180deg,rgba(18,18,18,.18),rgba(18,18,18,.34)),
-    url('img/imagen1.jpg') center/cover no-repeat;
+    url('/img/imagen1.jpg') center/cover no-repeat;
 }
 
 .media-temple-santa-cruz{
@@ -294,7 +294,7 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
 .portfolio-item:nth-child(even) .portfolio-content{order:1}
 .portfolio-media{position:relative;min-height:clamp(420px,46vw,680px);border:1px solid var(--line);overflow:hidden}
 .portfolio-media::before{content:'';position:absolute;inset:22px;border:1px solid rgba(255,255,255,.38);pointer-events:none}
-.portfolio-media--temple{background:linear-gradient(180deg,rgba(18,18,18,.15),rgba(18,18,18,.42)),url('img/imagen1.jpg') center/cover no-repeat}
+.portfolio-media--temple{background:linear-gradient(180deg,rgba(18,18,18,.15),rgba(18,18,18,.42)),url('/img/imagen1.jpg') center/cover no-repeat}
 .portfolio-media--avicola{background:linear-gradient(150deg,rgba(124,98,76,.36),rgba(248,243,235,.68)),var(--soft)}
 .portfolio-media--prodimsa{background:linear-gradient(140deg,rgba(22,22,22,.18),rgba(122,102,80,.35)),var(--soft)}
 .portfolio-location{display:block;color:var(--muted);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
