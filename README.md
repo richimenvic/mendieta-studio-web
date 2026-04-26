@@ -9,6 +9,7 @@ Sitio oficial de Mendieta Studio construido con React + Vite y preparado para de
 - Se robusteció el fallback SPA en `public/404.html` para redirigir correctamente tanto en `*.github.io` como en dominio custom.
 - Se mantiene `BrowserRouter` con `basename` dinámico según host para navegación interna correcta.
 - Se conserva el formulario de contacto con Web3Forms.
+- Se fijó el favicon en URL absoluta del dominio para evitar solicitudes erróneas en rutas internas (ej. `/proyectos/favicon.svg`).
 
 ## Desarrollo local
 
