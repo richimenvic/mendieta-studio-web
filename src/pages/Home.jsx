@@ -1,13 +1,91 @@
 import { Link } from 'react-router-dom'
-import ProjectCard from '../components/ProjectCard'
+import ContactForm from '../components/ContactForm'
 import { featuredProjects } from '../data/projects'
+
+const projectMediaClassBySlug = {
+  'templo-la-paz': 'media-temple',
+  'templo-santa-cruz': 'media-temple-santa-cruz',
+  'centro-social-corporativo-prodimsa': 'media-prodimsa',
+}
+
+const homeFeaturedProjects = featuredProjects.slice(0, 3)
 
 export default function Home() {
   return (
     <main>
-      <section className="hero hero-editorial"><div className="wrap"><div className="kicker">Mendieta Studio · Arquitectura</div><h1>Arquitectura profesional con visión contemporánea y rigor técnico.</h1></div></section>
-      <section className="section section-featured"><div className="wrap"><div className="section-head"><div className="kicker">Proyectos destacados</div></div>{featuredProjects.map((p) => <ProjectCard key={p.slug} project={p} />)}</div></section>
-      <section className="section"><div className="wrap cta-section"><div><div className="kicker">Servicios</div><h2>Arquitectura, técnica y coordinación para proyectos exigentes.</h2></div><Link className="cta-link" to="/servicios">Ver servicios</Link></div></section>
+      <section className="hero hero-editorial">
+        <div className="wrap hero-grid home-hero-grid">
+          <div>
+            <div className="kicker">Mendieta Studio · Arquitectura</div>
+            <h1 className="home-hero-title">Arquitectura contemporánea desarrollada con precisión técnica y rigor profesional.</h1>
+            <p className="lead">Proyectos residenciales, institucionales y documentación técnica de alta complejidad.</p>
+            <div className="home-hero-actions">
+              <Link className="cta-link" to="/proyectos">Ver Proyectos</Link>
+              <Link className="cta-link cta-link--ghost" to="/contacto">Contactar</Link>
+            </div>
+          </div>
+          <figure className="hero-image hero-image-photo">
+            <img className="media-img" src="/img/imagen1.jpg" alt="Proyecto arquitectónico de Mendieta Studio" loading="eager" />
+            <figcaption>Mendieta Studio · Portfolio seleccionado</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="section section-featured">
+        <div className="wrap">
+          <div className="section-head">
+            <div className="kicker">Proyectos destacados</div>
+          </div>
+          <div className="home-project-grid">
+            {homeFeaturedProjects.map((project) => (
+              <article className="home-project-card" key={project.slug}>
+                <Link to={`/proyectos/${project.slug}`} className={`home-project-image ${projectMediaClassBySlug[project.slug] || 'media-avicola'}`} aria-label={`Ver proyecto ${project.title}`} />
+                <div className="home-project-content">
+                  <h3>{project.title}</h3>
+                  <p>{[project.type || project.category, project.location || 'Córdoba, España', project.year].filter(Boolean).join(' / ')}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head">
+            <div className="kicker">Servicios / Capacidades</div>
+          </div>
+          <div className="home-services-grid">
+            <article className="box home-service-card"><h3>Arquitectura</h3><p>Diseño y desarrollo integral de proyectos arquitectónicos.</p></article>
+            <article className="box home-service-card"><h3>Documentación Técnica</h3><p>Producción de documentación ejecutiva precisa para construcción.</p></article>
+            <article className="box home-service-card"><h3>Coordinación BIM</h3><p>Coordinación interdisciplinar y control técnico digital.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap home-about-grid">
+          <div>
+            <div className="kicker">Sobre el Estudio</div>
+            <h2>Sobre el Estudio</h2>
+          </div>
+          <div>
+            <p className="section-copy">Mendieta Studio es un estudio de arquitectura con base en Pozoblanco (Córdoba), enfocado en el desarrollo de proyectos contemporáneos con especial atención al rigor técnico, la documentación precisa y la coordinación integral del proceso constructivo.</p>
+            <Link className="cta-link" to="/estudio">Conocer el Estudio</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <div className="kicker">Contacto</div>
+          <h2>Hablemos de su próximo proyecto</h2>
+          <p className="section-copy home-contact-copy">Estamos disponibles para nuevas oportunidades, colaboraciones y encargos arquitectónicos.</p>
+          <div className="box contact-form-box">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
