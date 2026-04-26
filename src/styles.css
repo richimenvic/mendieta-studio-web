@@ -668,6 +668,15 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   grid-template-columns:repeat(3,minmax(0,1fr));
 }
 
+.legal-note{
+  margin-top:24px;
+  color:var(--muted);
+  font-size:.72rem;
+  letter-spacing:.04em;
+  line-height:1.6;
+  white-space:pre-line;
+}
+
 .project-pagination{
   margin-top:36px;
   padding-top:22px;

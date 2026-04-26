@@ -1,4 +1,4 @@
-const templeDisclaimer = 'Imágenes utilizadas con autorización de The Church of Jesus Christ of Latter-day Saints, exclusivamente para este portafolio digital y sin implicar aval institucional. ©2019 Intellectual Reserve, Inc. All rights reserved.'
+const templeDisclaimer = 'Imágenes utilizadas con autorización.\n©2019 BY INTELLECTUAL RESERVE, INC. ALL RIGHTS RESERVED.'
 
 export const projects = [
   {
