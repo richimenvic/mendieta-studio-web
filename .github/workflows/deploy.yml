@@ -2,7 +2,7 @@ name: Deploy Mendieta Studio
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
       - name: Validate Pages artifact
@@ -31,9 +32,15 @@ jobs:
           test -f dist/CNAME
           test -d dist/assets
           grep -qx "mendietastudio.com" dist/CNAME
+          grep -Eq 'src="/assets/.+\.js"' dist/index.html
+          grep -Eq 'href="/assets/.+\.css"' dist/index.html
+          if grep -q '/src/main.jsx' dist/index.html; then
+            echo "ERROR: dist/index.html must not reference /src/main.jsx"
+            exit 1
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist
 
   deploy:
     environment:
