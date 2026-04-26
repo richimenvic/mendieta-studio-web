@@ -43,4 +43,14 @@ export const projects = [
   },
 ]
 
+export const featuredProjectSlugs = [
+  'templo-la-paz',
+  'templo-santa-cruz',
+  'centro-social-corporativo-prodimsa',
+]
+
+export const featuredProjects = featuredProjectSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter(Boolean)
+
 export const getProjectBySlug = (slug) => projects.find((project) => project.slug === slug)
