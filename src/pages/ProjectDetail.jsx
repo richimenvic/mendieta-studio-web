@@ -11,6 +11,11 @@ export default function ProjectDetail() {
       <div className="wrap">
         <div className="kicker">Proyecto</div>
         <h1>{project.title}</h1>
+        {project.detailImage && (
+          <figure className="featured-project-media project-detail-media">
+            <img className="media-img project-detail-media-img" src={project.detailImage} alt={project.title} loading="eager" />
+          </figure>
+        )}
         <p>{project.description}</p>
         <dl className="project-facts">
           {Object.entries({ Ubicación: project.location, Año: project.year, Estado: project.status, 'Fase actual': project.phase, Cliente: project.client, Rol: project.role, Tipología: project.type }).map(([k, v]) => v && <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}

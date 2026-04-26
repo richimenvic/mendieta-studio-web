@@ -2,12 +2,6 @@ import { Link } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
 import { featuredProjects } from '../data/projects'
 
-const projectMediaClassBySlug = {
-  'templo-la-paz': 'media-temple',
-  'templo-santa-cruz': 'media-temple-santa-cruz',
-  'centro-social-corporativo-prodimsa': 'media-prodimsa',
-}
-
 const homeFeaturedProjects = featuredProjects.slice(0, 3)
 
 export default function Home() {
@@ -25,7 +19,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="hero-image hero-image-photo">
-            <img className="media-img" src="/img/imagen1.jpg" alt="Proyecto arquitectónico de Mendieta Studio" loading="eager" />
+            <img className="media-img" src="/img/projects/lapaz-hero.webp" alt="Proyecto arquitectónico de Mendieta Studio" loading="eager" />
             <figcaption>Mendieta Studio · Portfolio seleccionado</figcaption>
           </figure>
         </div>
@@ -39,7 +33,11 @@ export default function Home() {
           <div className="home-project-grid">
             {homeFeaturedProjects.map((project) => (
               <article className="home-project-card" key={project.slug}>
-                <Link to={`/proyectos/${project.slug}`} className={`home-project-image ${projectMediaClassBySlug[project.slug] || 'media-avicola'}`} aria-label={`Ver proyecto ${project.title}`} />
+                <Link to={`/proyectos/${project.slug}`} className="home-project-image" aria-label={`Ver proyecto ${project.title}`}>
+                  {project.cardImage
+                    ? <img className="media-img home-project-media-img" src={project.cardImage} alt={project.title} loading="lazy" />
+                    : <span className="home-project-fallback media-avicola" aria-hidden="true" />}
+                </Link>
                 <div className="home-project-content">
                   <h3>{project.title}</h3>
                   <p>{[project.type || project.category, project.location || 'Córdoba, España', project.year].filter(Boolean).join(' / ')}</p>

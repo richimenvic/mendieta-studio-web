@@ -15,6 +15,8 @@ export const projects = [
     description:
       'Proyecto institucional de alta complejidad geométrica y coordinación multidisciplinar. Se trabajó con documentación integral y coordinación temprana para asegurar consistencia técnica en obra.',
     legalNote: templeDisclaimer,
+    cardImage: '/img/projects/lapaz-card.webp',
+    detailImage: '/img/projects/lapaz-detail.webp',
   },
   {
     slug: 'templo-santa-cruz',
@@ -29,6 +31,8 @@ export const projects = [
     description:
       'Proyecto institucional desarrollado para Santa Cruz, con enfoque en precisión documental, sobriedad formal y coordinación multidisciplinar orientada a su entrega final.',
     legalNote: templeDisclaimer,
+    cardImage: '/img/projects/santacruz-card.webp',
+    detailImage: '/img/projects/santacruz-detail.webp',
   },
   {
     slug: 'centro-social-corporativo-prodimsa',

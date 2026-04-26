@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './styles.css'
 
+window.__MENDIETA_APP_BOOTED = true
+
 function resolveBasePath() {
   const { hostname, pathname } = window.location
 
