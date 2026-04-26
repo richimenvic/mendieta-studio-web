@@ -38,12 +38,23 @@ export const projects = [
     slug: 'centro-social-corporativo-prodimsa',
     legacyPath: '/project-prodimsa.html',
     title: 'Centro Social Corporativo PRODIMSA',
+    location: 'Santa Cruz, Bolivia',
     year: '2018',
     type: 'Corporativo / Sede social',
     status: 'Finalizado',
     role: 'Diseño y construcción',
     description:
       'Diseño y construcción de la sede social de PRODIMSA, concebida con un enfoque integral que combina funcionalidad y bienestar corporativo.',
+    cardImage: '/img/projects/prodimsa-lateral-card.webp',
+    detailImage: '/img/projects/prodimsa-lateral-detail.webp',
+    galleryImages: [
+      '/img/projects/prodimsa-lateral-detail.webp',
+      '/img/projects/prodimsa-gallery-02-exterior.webp',
+      '/img/projects/prodimsa-gallery-03-main-hall.webp',
+      '/img/projects/prodimsa-gallery-05-barbecue.webp',
+      '/img/projects/prodimsa-gallery-06-structure.webp',
+      '/img/projects/prodimsa-gallery-04-covered-space.webp',
+    ],
   },
 ]
 
