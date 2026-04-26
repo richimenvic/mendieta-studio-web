@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import ContactForm from '../components/ContactForm'
 import { featuredProjects } from '../data/projects'
 
 const homeFeaturedProjects = featuredProjects.slice(0, 3)
@@ -12,7 +11,7 @@ export default function Home() {
           <div>
             <div className="kicker">Mendieta Studio · Arquitectura</div>
             <h1 className="home-hero-title">Arquitectura contemporánea desarrollada con precisión técnica y rigor profesional.</h1>
-            <p className="lead">Proyectos residenciales, institucionales y documentación técnica de alta complejidad.</p>
+            <p className="lead">Proyectos residenciales, institucionales y documentación técnica especializada.</p>
             <div className="home-hero-actions">
               <Link className="cta-link" to="/proyectos">Ver Proyectos</Link>
               <Link className="cta-link cta-link--ghost" to="/contacto">Contactar</Link>
@@ -20,7 +19,6 @@ export default function Home() {
           </div>
           <figure className="hero-image hero-image-photo">
             <img className="media-img" src="/img/projects/lapaz-hero.webp" alt="Vista exterior del Templo La Paz, proyecto destacado de Mendieta Studio" loading="eager" />
-            <figcaption>Mendieta Studio · Portfolio seleccionado</figcaption>
           </figure>
         </div>
       </section>
@@ -76,11 +74,12 @@ export default function Home() {
 
       <section className="section">
         <div className="wrap">
-          <div className="kicker">Contacto</div>
-          <h2>Hablemos de su próximo proyecto</h2>
-          <p className="section-copy home-contact-copy">Estamos disponibles para nuevas oportunidades, colaboraciones y encargos arquitectónicos.</p>
-          <div className="box contact-form-box">
-            <ContactForm />
+          <div className="home-cta-section">
+            <div>
+              <h2>Hablemos de su próximo proyecto</h2>
+              <p className="section-copy home-contact-copy">Estamos disponibles para nuevas oportunidades, colaboraciones y encargos arquitectónicos.</p>
+            </div>
+            <Link className="cta-link" to="/contacto">Contactar</Link>
           </div>
         </div>
       </section>
