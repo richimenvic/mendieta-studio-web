@@ -5,7 +5,7 @@ export default function ProjectCard({ project }) {
     <article className="featured-project">
       <Link className="featured-project-media" to={`/proyectos/${project.slug}`} aria-label={`Ver proyecto ${project.title}`}>
         {project.cardImage
-          ? <img className="media-img featured-project-media-img" src={project.cardImage} alt={project.title} loading="lazy" />
+          ? <img className="media-img featured-project-media-img" src={project.cardImage} alt={`Imagen principal del proyecto ${project.title}`} loading="lazy" />
           : null}
       </Link>
       <div className="featured-project-content">
