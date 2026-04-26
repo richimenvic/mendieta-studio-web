@@ -23,9 +23,9 @@ export default function ProjectDetail() {
         {project.galleryImages?.length ? (
           <section className="project-gallery section-min" aria-label={`Galería del proyecto ${project.title}`}>
             {project.galleryImages.map((imageSrc, index) => (
-              <figure className="image-placeholder" key={imageSrc}>
+              <figure className="image-placeholder project-gallery-item" key={imageSrc}>
                 <img
-                  className="media-img"
+                  className="media-img project-gallery-img"
                   src={imageSrc}
                   alt={`Galería ${index + 1} del proyecto ${project.title}`}
                   loading="lazy"

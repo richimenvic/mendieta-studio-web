@@ -669,6 +669,16 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   grid-template-columns:repeat(3,minmax(0,1fr));
 }
 
+.project-gallery-item{
+  min-height:unset;
+}
+
+.project-gallery-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 .legal-note{
   margin-top:24px;
   color:var(--muted);
@@ -735,6 +745,24 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
 @media(max-width:640px){
   .details{
     grid-template-columns:1fr;
+  }
+
+  .project-gallery{
+    gap:12px;
+    margin-inline:-6px;
+  }
+
+  .project-gallery .image-placeholder{
+    min-height:0;
+  }
+
+  .project-gallery-img{
+    height:auto;
+    object-fit:contain;
+  }
+
+  .project-gallery .image-placeholder::before{
+    inset:10px;
   }
 }
 
