@@ -25,19 +25,7 @@ jobs:
           cache: npm
       - uses: actions/configure-pages@v5
       - run: npm ci
-      - run: npm run build
-      - name: Validate Pages artifact
-        run: |
-          test -f dist/index.html
-          test -f dist/CNAME
-          test -d dist/assets
-          grep -qx "mendietastudio.com" dist/CNAME
-          grep -Eq 'src="/assets/.+\.js"' dist/index.html
-          grep -Eq 'href="/assets/.+\.css"' dist/index.html
-          if grep -q '/src/main.jsx' dist/index.html; then
-            echo "ERROR: dist/index.html must not reference /src/main.jsx"
-            exit 1
-          fi
+      - run: npm run build:pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
