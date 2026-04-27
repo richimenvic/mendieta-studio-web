@@ -34,10 +34,21 @@ function SeoSync() {
   return null
 }
 
+function ScrollToTop() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
+  return null
+}
+
 export default function App() {
   return (
     <>
       <SeoSync />
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

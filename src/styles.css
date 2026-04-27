@@ -879,6 +879,32 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   min-height:clamp(280px,42vw,560px);
 }
 
+.project-detail-media-img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+@media(max-width:768px){
+  .project-detail-media,
+  .featured-project-media{
+    aspect-ratio:auto;
+    height:auto;
+    min-height:0;
+    padding:0;
+  }
+
+  .project-detail-media-img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    position:static;
+    inset:auto;
+  }
+}
+
 @media(max-width:1080px){
   .home-project-grid,
   .home-services-grid,
