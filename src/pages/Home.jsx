@@ -18,7 +18,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="hero-image hero-image-photo">
-            <img className="media-img" src="/img/projects/lapaz-hero.webp" alt="Vista exterior del Templo La Paz, proyecto destacado de Mendieta Studio" loading="eager" />
+            <img className="media-img" src="/img/projects/prodimsa-lateral-hero.webp" alt="Vista exterior del Centro Social Corporativo PRODIMSA, proyecto de Mendieta Studio" loading="eager" />
           </figure>
         </div>
       </section>
