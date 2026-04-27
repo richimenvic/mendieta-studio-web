@@ -10,8 +10,8 @@ export default function Home() {
         <div className="wrap hero-grid home-hero-grid">
           <div>
             <div className="kicker">Mendieta Studio · Arquitectura</div>
-            <h1 className="home-hero-title">Arquitectura contemporánea desarrollada con precisión técnica y rigor profesional.</h1>
-            <p className="lead">Proyectos residenciales, institucionales y documentación técnica especializada.</p>
+            <h1 className="home-hero-title">Diseñamos arquitectura contemporánea con precisión técnica y atención al detalle.</h1>
+            <p className="lead">Proyectos residenciales, institucionales y documentación técnica de alta calidad.</p>
             <div className="home-hero-actions">
               <Link className="cta-link" to="/proyectos">Ver Proyectos</Link>
               <Link className="cta-link cta-link--ghost" to="/contacto">Contactar</Link>
@@ -66,7 +66,7 @@ export default function Home() {
             <h2>Sobre el Estudio</h2>
           </div>
           <div>
-            <p className="section-copy">Mendieta Studio es un estudio de arquitectura con base en Pozoblanco (Córdoba), enfocado en el desarrollo de proyectos contemporáneos con especial atención al rigor técnico, la documentación precisa y la coordinación integral del proceso constructivo.</p>
+            <p className="section-copy">Mendieta Studio desarrolla proyectos arquitectónicos con un enfoque en diseño, detalle técnico y coordinación integral del proceso constructivo.</p>
             <Link className="cta-link" to="/estudio">Conocer el Estudio</Link>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Home() {
           <div className="home-cta-section">
             <div>
               <h2>Hablemos de su próximo proyecto</h2>
-              <p className="section-copy home-contact-copy">Estamos disponibles para nuevas oportunidades, colaboraciones y encargos arquitectónicos.</p>
+              <p className="section-copy home-contact-copy">Estamos disponibles para nuevos proyectos, colaboraciones y consultas profesionales.</p>
             </div>
             <Link className="cta-link" to="/contacto">Contactar</Link>
           </div>
