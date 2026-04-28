@@ -49,7 +49,7 @@ export default function Home() {
       <section className="section">
         <div className="wrap">
           <div className="section-head">
-            <div className="kicker">Servicios / Capacidades</div>
+            <div className="kicker">Servicios</div>
           </div>
           <div className="home-services-grid">
             <article className="box home-service-card"><h3>Arquitectura</h3><p>Diseño y desarrollo integral de proyectos arquitectónicos.</p></article>
