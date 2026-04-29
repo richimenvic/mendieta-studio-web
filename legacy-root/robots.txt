@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mendietastudio.com/sitemap.xml
