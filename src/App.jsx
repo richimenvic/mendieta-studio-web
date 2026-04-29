@@ -14,14 +14,14 @@ import CookiesPolicy from './pages/CookiesPolicy'
 import { siteUrl, updateSeo } from './seo'
 
 const seoByPath = {
-  '/': ['Mendieta Studio | Estudio de Arquitectura en Córdoba', 'Mendieta Studio, estudio de arquitectura en Córdoba. Diseño, técnica y documentación rigurosa para proyectos residenciales, institucionales y comerciales.'],
-  '/proyectos': ['Proyectos de Arquitectura | Mendieta Studio', 'Portfolio curado de Mendieta Studio con proyectos seleccionados por rigor técnico, calidad arquitectónica y coherencia editorial.'],
-  '/estudio': ['Estudio de Arquitectura | Mendieta Studio', 'Conozca el estudio Mendieta Studio: filosofía, experiencia y enfoque profesional en arquitectura, técnica y documentación.'],
-  '/servicios': ['Servicios de Arquitectura | Mendieta Studio', 'Servicios de Mendieta Studio: arquitectura, desarrollo de proyecto, documentación técnica, coordinación BIM y consultoría.'],
-  '/contacto': ['Contacto | Mendieta Studio', 'Contacto de Mendieta Studio. Hablemos de su próximo proyecto arquitectónico en Córdoba, España.'],
-  '/aviso-legal': ['Aviso Legal | Mendieta Studio', 'Aviso legal de Mendieta Studio con información del titular, condiciones de uso, propiedad intelectual y jurisdicción aplicable.'],
-  '/politica-privacidad': ['Política de Privacidad | Mendieta Studio', 'Política de privacidad de Mendieta Studio conforme RGPD y LOPDGDD: finalidad, bases legales, conservación y derechos del usuario.'],
-  '/politica-cookies': ['Política de Cookies | Mendieta Studio', 'Información sobre el uso de cookies en mendietastudio.com, finalidades, base legal y gestión de preferencias del usuario.'],
+  '/': ['Menvic | Estudio de Arquitectura en Córdoba', 'Menvic, estudio de arquitectura en Córdoba. Diseño, técnica y documentación rigurosa para proyectos residenciales, institucionales y comerciales.'],
+  '/proyectos': ['Proyectos de Arquitectura | Menvic', 'Portfolio curado de Menvic con proyectos seleccionados por rigor técnico, calidad arquitectónica y coherencia editorial.'],
+  '/estudio': ['Estudio de Arquitectura | Menvic', 'Conozca el estudio Menvic: filosofía, experiencia y enfoque profesional en arquitectura, técnica y documentación.'],
+  '/servicios': ['Servicios de Arquitectura | Menvic', 'Servicios de Menvic: arquitectura, desarrollo de proyecto, documentación técnica, coordinación BIM y consultoría.'],
+  '/contacto': ['Contacto | Menvic', 'Contacto de Menvic. Hablemos de su próximo proyecto arquitectónico en Córdoba, España.'],
+  '/aviso-legal': ['Aviso Legal | Menvic', 'Aviso legal de Menvic con información del titular, condiciones de uso, propiedad intelectual y jurisdicción aplicable.'],
+  '/politica-privacidad': ['Política de Privacidad | Menvic', 'Política de privacidad de Menvic conforme RGPD y LOPDGDD: finalidad, bases legales, conservación y derechos del usuario.'],
+  '/politica-cookies': ['Política de Cookies | Menvic', 'Información sobre el uso de cookies en menvic.com, finalidades, base legal y gestión de preferencias del usuario.'],
 }
 
 function SeoSync() {

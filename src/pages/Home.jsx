@@ -9,7 +9,7 @@ export default function Home() {
       <section className="hero hero-editorial">
         <div className="wrap hero-grid home-hero-grid">
           <div>
-            <div className="kicker home-kicker">Mendieta Studio · Arquitectura</div>
+            <div className="kicker home-kicker">Menvic · Arquitectura</div>
             <h1 className="home-hero-title">Diseñamos arquitectura contemporánea con precisión técnica y atención al detalle.</h1>
             <p className="lead">Proyectos residenciales, institucionales y documentación técnica de alta calidad.</p>
             <div className="home-hero-actions">
@@ -18,7 +18,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="hero-image hero-image-photo">
-            <img className="media-img" src="/img/projects/prodimsa-lateral-hero.webp" alt="Vista exterior del Centro Social Corporativo PRODIMSA, proyecto de Mendieta Studio" loading="eager" />
+            <img className="media-img" src="/img/projects/prodimsa-lateral-hero.webp" alt="Vista exterior del Centro Social Corporativo PRODIMSA, proyecto de Menvic" loading="eager" />
           </figure>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function Home() {
             <h2>Sobre el Estudio</h2>
           </div>
           <div>
-            <p className="section-copy">Mendieta Studio desarrolla proyectos arquitectónicos con un enfoque en diseño, detalle técnico y coordinación integral del proceso constructivo.</p>
+            <p className="section-copy">Menvic desarrolla proyectos arquitectónicos con un enfoque en diseño, detalle técnico y coordinación integral del proceso constructivo.</p>
             <Link className="cta-link" to="/estudio">Conocer el Estudio</Link>
           </div>
         </div>

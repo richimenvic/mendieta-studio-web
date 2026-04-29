@@ -1,4 +1,4 @@
-name: Deploy Mendieta Studio
+name: Deploy Menvic
 
 on:
   push:

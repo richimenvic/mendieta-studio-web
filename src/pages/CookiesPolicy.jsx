@@ -6,7 +6,7 @@ export default function CookiesPolicy() {
         <h1>Política de Cookies</h1>
 
         <section className="box">
-          <p>Esta Política de Cookies describe cómo Mendieta Studio utiliza cookies y tecnologías similares en su sitio web, de conformidad con la normativa aplicable en España y la Unión Europea.</p>
+          <p>Esta Política de Cookies describe cómo Menvic utiliza cookies y tecnologías similares en su sitio web, de conformidad con la normativa aplicable en España y la Unión Europea.</p>
           <p>El objetivo es ofrecer una información clara y transparente sobre qué cookies se usan, con qué finalidad y cómo puede gestionarlas el usuario.</p>
         </section>
 
@@ -22,7 +22,7 @@ export default function CookiesPolicy() {
           <p>El sitio puede utilizar cookies estrictamente necesarias para garantizar funciones básicas de navegación y seguridad. Estas cookies no requieren consentimiento previo cuando son imprescindibles para la prestación del servicio solicitado por el usuario.</p>
 
           <h3>Cookies analíticas (si aplica)</h3>
-          <p>En la fecha de última actualización indicada en esta política, Mendieta Studio no tiene implementadas cookies analíticas propias ni de Google Analytics en este sitio web.</p>
+          <p>En la fecha de última actualización indicada en esta política, Menvic no tiene implementadas cookies analíticas propias ni de Google Analytics en este sitio web.</p>
 
           <h3>Cookies de terceros (si aplica)</h3>
           <p>Tras la revisión técnica del sitio, no se cargan Google Fonts externas, scripts desde CDN, iframes embebidos, widgets de terceros ni librerías externas que instalen cookies de forma automática durante la navegación ordinaria por páginas informativas.</p>
@@ -35,7 +35,7 @@ export default function CookiesPolicy() {
             <li>Proteger la seguridad de las comunicaciones y prevenir usos automatizados no deseados.</li>
             <li>En su caso, habilitar funciones específicas solicitadas expresamente por el usuario.</li>
           </ul>
-          <p>Mendieta Studio no utiliza cookies de perfilado para decisiones automatizadas ni para publicidad personalizada en este sitio.</p>
+          <p>Menvic no utiliza cookies de perfilado para decisiones automatizadas ni para publicidad personalizada en este sitio.</p>
         </section>
 
         <section className="box">
