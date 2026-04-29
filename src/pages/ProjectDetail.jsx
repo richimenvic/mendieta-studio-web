@@ -18,7 +18,7 @@ export default function ProjectDetail() {
         )}
         <p>{project.description}</p>
         <dl className="project-facts">
-          {Object.entries({ Ubicación: project.location, Año: project.year, Estado: project.status, 'Fase actual': project.phase, Cliente: project.client, Rol: project.role, Tipología: project.type }).map(([k, v]) => v && <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
+          {Object.entries({ Ubicación: project.location, Año: project.year, Estado: project.status, 'Fase actual': project.phase, Cliente: project.client, 'Proyecto para': project.projectFor, Rol: project.role, Tipología: project.type }).map(([k, v]) => v && <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
         </dl>
         {project.galleryImages?.length ? (
           <section className="project-gallery section-min" aria-label={`Galería del proyecto ${project.title}`}>

@@ -9,7 +9,8 @@ export const projects = [
     year: '2024',
     status: 'Proyecto terminado',
     phase: 'Construcción próxima',
-    client: 'The Church of Jesus Christ of Latter-day Saints',
+    client: 'MHTN Architects',
+    projectFor: 'The Church of Jesus Christ of Latter-day Saints',
     role: 'Diseño arquitectónico, documentación técnica y coordinación BIM',
     category: 'Institucional',
     description:
@@ -25,7 +26,8 @@ export const projects = [
     location: 'Santa Cruz, Bolivia',
     year: '2022',
     status: 'Próximo a entrega',
-    client: 'The Church of Jesus Christ of Latter-day Saints',
+    client: 'MHTN Architects',
+    projectFor: 'The Church of Jesus Christ of Latter-day Saints',
     role: 'Diseño arquitectónico, documentación técnica y coordinación BIM',
     category: 'Institucional',
     description:
