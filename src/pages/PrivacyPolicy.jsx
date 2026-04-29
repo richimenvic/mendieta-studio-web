@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
         <div className="box">
           <h2>1. Introducción y normativa aplicable (RGPD / LOPDGDD)</h2>
           <p>
-            La presente Política de Privacidad describe cómo Menvic trata y protege los datos personales de las
+            La presente Política de Privacidad describe cómo Mendieta Studio trata y protege los datos personales de las
             personas usuarias que contactan, solicitan información o mantienen una relación profesional con este sitio web.
             El tratamiento se realiza conforme a los principios de licitud, lealtad, transparencia, minimización de datos,
             exactitud, limitación del plazo de conservación e integridad y confidencialidad.
@@ -22,8 +22,8 @@ export default function PrivacyPolicy() {
           <p><strong>Responsable:</strong> Ricardo Javier Mendieta Cárdenas</p>
           <p><strong>NIF/NIE:</strong> Y9987288N</p>
           <p><strong>Domicilio profesional:</strong> Córdoba, España</p>
-          <p><strong>Correo electrónico:</strong> <a className="text-link" href="mailto:contacto@menvic.com">contacto@menvic.com</a></p>
-          <p><strong>Web:</strong> <a className="text-link" href="https://menvic.com" target="_blank" rel="noopener noreferrer">https://menvic.com</a></p>
+          <p><strong>Correo electrónico:</strong> <a className="text-link" href="mailto:contacto@mendietastudio.com">contacto@mendietastudio.com</a></p>
+          <p><strong>Web:</strong> <a className="text-link" href="https://mendietastudio.com" target="_blank" rel="noopener noreferrer">https://mendietastudio.com</a></p>
           <p>
             El responsable decide los fines y medios del tratamiento de los datos personales y adopta las medidas necesarias
             para garantizar un nivel de seguridad adecuado al riesgo de cada operación de tratamiento.
@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
           <h2>10. Cómo ejercer los derechos</h2>
           <p>
             Para ejercer cualquiera de los derechos anteriores, puede enviarse una solicitud a
-            <a className="text-link" href="mailto:contacto@menvic.com">contacto@menvic.com</a>, indicando en el asunto
+            <a className="text-link" href="mailto:contacto@mendietastudio.com">contacto@mendietastudio.com</a>, indicando en el asunto
             «Protección de Datos» y especificando el derecho que se desea ejercer.
           </p>
           <p>
@@ -140,7 +140,7 @@ export default function PrivacyPolicy() {
 
           <h2>12. Seguridad de los datos</h2>
           <p>
-            Menvic aplica medidas técnicas y organizativas apropiadas para preservar la seguridad de los datos personales,
+            Mendieta Studio aplica medidas técnicas y organizativas apropiadas para preservar la seguridad de los datos personales,
             incluyendo controles de acceso, medidas de confidencialidad, procedimientos de gestión de incidencias y revisión periódica
             de buenas prácticas de seguridad.
           </p>
