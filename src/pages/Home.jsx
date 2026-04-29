@@ -9,7 +9,7 @@ export default function Home() {
       <section className="hero hero-editorial">
         <div className="wrap hero-grid home-hero-grid">
           <div>
-            <div className="kicker">Mendieta Studio · Arquitectura</div>
+            <div className="kicker home-kicker">Mendieta Studio · Arquitectura</div>
             <h1 className="home-hero-title">Diseñamos arquitectura contemporánea con precisión técnica y atención al detalle.</h1>
             <p className="lead">Proyectos residenciales, institucionales y documentación técnica de alta calidad.</p>
             <div className="home-hero-actions">
@@ -26,7 +26,7 @@ export default function Home() {
       <section className="section section-featured">
         <div className="wrap">
           <div className="section-head">
-            <div className="kicker">Proyectos destacados</div>
+            <div className="kicker home-kicker">Proyectos destacados</div>
           </div>
           <div className="home-project-grid">
             {homeFeaturedProjects.map((project) => (
@@ -49,7 +49,7 @@ export default function Home() {
       <section className="section">
         <div className="wrap">
           <div className="section-head">
-            <div className="kicker">Servicios</div>
+            <div className="kicker home-kicker">Servicios</div>
           </div>
           <div className="home-services-grid">
             <article className="box home-service-card"><h3>Arquitectura</h3><p>Diseño y desarrollo integral de proyectos arquitectónicos.</p></article>
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="section">
         <div className="wrap home-about-grid">
           <div>
-            <div className="kicker">Sobre el Estudio</div>
+            <div className="kicker home-kicker">Sobre el Estudio</div>
             <h2>Sobre el Estudio</h2>
           </div>
           <div>
