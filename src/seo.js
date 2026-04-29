@@ -1,4 +1,4 @@
-export const siteUrl = 'https://mendietastudio.com'
+export const siteUrl = 'https://menvic.com'
 export const defaultImage = `${siteUrl}/img/imagen1.jpg`
 
 export function updateSeo({ title, description, canonical, image = defaultImage }) {

@@ -18,7 +18,7 @@ const studioBlocks = [
   {
     title: 'Experiencia',
     text: [
-      'Mendieta Studio participa en proyectos de distinta escala y complejidad, colaborando en entornos locales e internacionales.',
+      'Menvic participa en proyectos de distinta escala y complejidad, colaborando en entornos locales e internacionales.',
       'Nuestra experiencia abarca desarrollos residenciales, equipamientos institucionales, arquitectura corporativa y soporte técnico especializado para equipos externos.'
     ]
   },
@@ -37,9 +37,9 @@ export default function Studio() {
       <main className="page-hero">
         <div className="wrap studio-intro">
           <div className="kicker">Estudio</div>
-          <h1>Mendieta Studio</h1>
+          <h1>Menvic</h1>
           <p className="lead studio-lead">
-            Mendieta Studio es un estudio de arquitectura enfocado en el desarrollo de proyectos contemporáneos con especial atención al rigor técnico, la precisión documental y la coordinación integral del proceso constructivo.
+            Menvic es un estudio de arquitectura enfocado en el desarrollo de proyectos contemporáneos con especial atención al rigor técnico, la precisión documental y la coordinación integral del proceso constructivo.
           </p>
           <p className="lead studio-lead">
             Trabajamos en proyectos residenciales, institucionales y corporativos, abordando cada encargo desde una visión equilibrada entre diseño, funcionalidad y viabilidad constructiva.

@@ -20,7 +20,7 @@ export default function ContactForm() {
     setError(false)
 
     const formData = new FormData(form)
-    formData.append('subject', 'Nueva consulta desde Mendieta Studio')
+    formData.append('subject', 'Nueva consulta desde Menvic')
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
