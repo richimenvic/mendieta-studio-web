@@ -18,6 +18,7 @@ export default function ProjectCard({ project }) {
           {project.status && <div><dt>Estado</dt><dd>{project.status}</dd></div>}
           {project.phase && <div><dt>Fase actual</dt><dd>{project.phase}</dd></div>}
           {project.client && <div><dt>Cliente</dt><dd>{project.client}</dd></div>}
+          {project.projectFor && <div><dt>Proyecto para</dt><dd>{project.projectFor}</dd></div>}
           <div><dt>Rol</dt><dd>{project.role}</dd></div>
         </dl>
         <Link className="text-link" to={`/proyectos/${project.slug}`}>Ver proyecto</Link>
