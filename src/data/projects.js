@@ -50,7 +50,6 @@ export const projects = [
     cardImage: '/img/projects/prodimsa-lateral-card.webp',
     detailImage: '/img/projects/prodimsa-lateral-detail.webp',
     galleryImages: [
-      '/img/projects/prodimsa-lateral-detail.webp',
       '/img/projects/prodimsa-gallery-02-exterior.webp',
       '/img/projects/prodimsa-gallery-03-main-hall.webp',
       '/img/projects/prodimsa-gallery-05-barbecue.webp',
