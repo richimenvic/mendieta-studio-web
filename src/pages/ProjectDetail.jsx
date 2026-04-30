@@ -74,23 +74,28 @@ function ProjectImageSlider({ images, title }) {
       </div>
 
       {hasMultipleImages && (
-        <div className="project-slider-footer" aria-label="Selector de imágenes">
-          <span className="project-slider-counter">
-            {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
-          </span>
-          <div className="project-slider-dots">
+        <>
+          <div className="project-slider-footer" aria-label="Selector de imágenes">
+            <span className="project-slider-counter">
+              {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+            </span>
+          </div>
+
+          <div className="project-slider-thumbnails" aria-label="Miniaturas de la galería">
             {images.map((imageSrc, index) => (
               <button
-                className={`project-slider-dot${index === currentIndex ? ' is-active' : ''}`}
+                className={`project-slider-thumbnail${index === currentIndex ? ' is-active' : ''}`}
                 key={`${imageSrc}-${index}`}
                 type="button"
                 onClick={() => setCurrentIndex(index)}
                 aria-label={`Ver imagen ${index + 1}`}
                 aria-current={index === currentIndex ? 'true' : undefined}
-              />
+              >
+                <img src={imageSrc} alt="" loading="lazy" />
+              </button>
             ))}
           </div>
-        </div>
+        </>
       )}
     </section>
   )
