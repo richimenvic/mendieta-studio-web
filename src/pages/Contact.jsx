@@ -6,12 +6,12 @@ export default function Contact() {
       <div className="wrap contact-intro">
         <div>
           <div className="kicker">Contacto</div>
-          <h1>Hablemos de su próximo proyecto</h1>
-          <p className="section-copy">Cuéntenos qué necesita desarrollar: una vivienda, una reforma, un proyecto institucional, documentación técnica o apoyo profesional para avanzar con más claridad.</p>
+          <h1>Hablemos de su proyecto</h1>
+          <p className="section-copy">Cuéntenos qué necesita: una vivienda, una reforma, una licencia, documentación técnica o apoyo profesional.</p>
         </div>
         <aside className="box contact-side-note" aria-label="Información orientativa">
-          <h3>Para preparar mejor la respuesta</h3>
-          <p>Puede incluir ubicación, tipo de proyecto, fase actual, superficie aproximada y plazo previsto. Con esa información podremos orientar mejor los siguientes pasos.</p>
+          <h3>Qué puede enviar</h3>
+          <p>Ubicación, tipo de proyecto, superficie aproximada, fase actual y cualquier plano o idea que ya tenga.</p>
         </aside>
       </div>
       <div className="wrap">

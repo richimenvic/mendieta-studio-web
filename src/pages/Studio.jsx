@@ -2,31 +2,31 @@ import { Link } from 'react-router-dom'
 
 const studioBlocks = [
   {
-    title: 'Enfoque',
+    title: 'Qué hacemos',
     text: [
-      'Entendemos la arquitectura como la síntesis entre concepto, técnica y ejecución.',
-      'Cada proyecto se desarrolla con una aproximación rigurosa orientada a producir soluciones sobrias, precisas y duraderas, capaces de responder tanto a las necesidades funcionales como a la calidad espacial y constructiva de la obra.'
+      'Desarrollamos proyectos de arquitectura para viviendas, reformas, equipamientos y encargos profesionales.',
+      'Trabajamos con una idea clara: diseño cuidado, documentación ordenada y soluciones viables.'
     ]
   },
   {
-    title: 'Metodología',
+    title: 'Cómo trabajamos',
     text: [
-      'Nuestro proceso de trabajo integra diseño, documentación y coordinación técnica desde etapas tempranas del proyecto.',
-      'Aplicamos metodologías BIM y sistemas avanzados de documentación para garantizar mayor control, precisión y coherencia durante todo el desarrollo arquitectónico.'
+      'Primero entendemos el encargo y sus necesidades reales.',
+      'Después ordenamos el proyecto con planos, criterios técnicos y documentación clara.'
     ]
   },
   {
-    title: 'Experiencia',
+    title: 'Dónde trabajamos',
     text: [
-      'Mendieta Studio participa en proyectos de distinta escala y complejidad, colaborando en entornos locales e internacionales.',
-      'Nuestra experiencia abarca desarrollos residenciales, equipamientos institucionales, arquitectura corporativa y soporte técnico especializado para equipos externos.'
+      'El estudio trabaja desde Córdoba y Pozoblanco.',
+      'También colaboramos en proyectos fuera de España cuando el encargo lo requiere.'
     ]
   },
   {
-    title: 'Filosofía',
+    title: 'Datos profesionales',
     text: [
-      'Creemos que la calidad arquitectónica surge de la correcta integración entre diseño y ejecución.',
-      'Por ello, cada decisión proyectual se evalúa no solo desde su valor formal, sino también desde su viabilidad técnica, eficiencia constructiva y permanencia en el tiempo.'
+      'Ricardo Javier Mendieta Cárdenas, arquitecto.',
+      'Colegiado nº 909 en el Colegio Oficial de Arquitectos de Córdoba.'
     ]
   }
 ]
@@ -39,10 +39,10 @@ export default function Studio() {
           <div className="kicker">Estudio</div>
           <h1>Mendieta Studio</h1>
           <p className="lead studio-lead">
-            Mendieta Studio es un estudio de arquitectura enfocado en el desarrollo de proyectos contemporáneos con especial atención al rigor técnico, la precisión documental y la coordinación integral del proceso constructivo.
+            Estudio de arquitectura en Córdoba y Pozoblanco, dirigido por Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909 en el Colegio Oficial de Arquitectos de Córdoba.
           </p>
           <p className="lead studio-lead">
-            Trabajamos en proyectos residenciales, institucionales y corporativos, abordando cada encargo desde una visión equilibrada entre diseño, funcionalidad y viabilidad constructiva.
+            Ofrecemos un servicio claro, cercano y técnico para ayudar a desarrollar cada proyecto con orden y seguridad.
           </p>
         </div>
       </main>
@@ -60,7 +60,7 @@ export default function Studio() {
 
           <article className="box studio-cta">
             <h2>¿Tiene un proyecto en mente?</h2>
-            <p>Estaremos encantados de estudiar su propuesta.</p>
+            <p>Podemos estudiar su caso y preparar una propuesta.</p>
             <Link className="cta-link" to="/contacto">Contactar</Link>
           </article>
         </div>

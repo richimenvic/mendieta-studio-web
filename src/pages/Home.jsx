@@ -4,10 +4,10 @@ import { featuredProjects } from '../data/projects'
 const homeFeaturedProjects = featuredProjects.slice(0, 3)
 
 const serviceHighlights = [
-  ['Anteproyectos', 'Primeras ideas, criterios de implantación, distribución y viabilidad arquitectónica.'],
-  ['Proyecto básico y ejecución', 'Documentación técnica precisa para licencia, definición constructiva y desarrollo de obra.'],
-  ['Coordinación BIM', 'Modelado, revisión y coordinación digital para reducir errores y mejorar el control técnico.'],
-  ['Consultoría técnica', 'Revisión documental, apoyo a equipos externos y acompañamiento en decisiones de proyecto.'],
+  ['Anteproyecto', 'Primeras ideas, distribución y estudio inicial del proyecto.'],
+  ['Proyecto básico y ejecución', 'Planos y documentos para licencia, obra y construcción.'],
+  ['Coordinación BIM', 'Modelos digitales para ordenar el proyecto y evitar errores.'],
+  ['Consultoría técnica', 'Apoyo técnico para clientes, promotores y otros equipos.'],
 ]
 
 export default function Home() {
@@ -16,17 +16,19 @@ export default function Home() {
       <section className="hero hero-editorial">
         <div className="wrap hero-grid home-hero-grid">
           <div>
-            <div className="kicker home-kicker">Mendieta Studio · Arquitectura</div>
-            <h1 className="home-hero-title">Arquitectura sobria, técnica y contemporánea.</h1>
-            <p className="lead">Desarrollamos proyectos residenciales, institucionales y de equipamiento con criterio de diseño, precisión constructiva y documentación coordinada.</p>
+            <div className="kicker home-kicker">Arquitecto en Córdoba / Pozoblanco</div>
+            <h1 className="home-hero-title">Arquitectura clara, técnica y bien documentada.</h1>
+            <p className="lead">Mendieta Studio desarrolla proyectos de arquitectura para viviendas, reformas, equipamientos y encargos profesionales.</p>
+            <p className="lead home-small-copy">Ricardo Javier Mendieta Cárdenas · Arquitecto colegiado nº 909 · Colegio Oficial de Arquitectos de Córdoba.</p>
             <div className="home-hero-actions">
               <Link className="cta-link" to="/proyectos">Ver proyectos</Link>
-              <Link className="cta-link cta-link--ghost" to="/contacto">Hablar sobre un proyecto</Link>
+              <Link className="cta-link cta-link--ghost" to="/contacto">Contactar</Link>
             </div>
             <div className="hero-meta-line home-trust-line" aria-label="Ámbitos de trabajo">
-              <span>Diseño arquitectónico</span>
-              <span>Documentación técnica</span>
-              <span>Coordinación BIM</span>
+              <span>Vivienda</span>
+              <span>Reformas</span>
+              <span>Proyecto técnico</span>
+              <span>BIM</span>
             </div>
           </div>
           <figure className="hero-image hero-image-photo">
@@ -38,8 +40,8 @@ export default function Home() {
       <section className="section section-featured">
         <div className="wrap">
           <div className="section-head home-section-head">
-            <div className="kicker home-kicker">Proyectos destacados</div>
-            <p className="section-copy">Una selección breve de trabajos desarrollados con atención al diseño, la documentación y la coordinación técnica.</p>
+            <div className="kicker home-kicker">Proyectos</div>
+            <p className="section-copy">Algunos trabajos realizados por el estudio.</p>
           </div>
           <div className="home-project-grid">
             {homeFeaturedProjects.map((project) => (
@@ -66,7 +68,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head home-section-head">
             <div className="kicker home-kicker">Servicios</div>
-            <p className="section-copy">Acompañamos el proyecto desde las primeras decisiones hasta la documentación técnica necesaria para desarrollarlo con rigor.</p>
+            <p className="section-copy">Servicios de arquitectura para avanzar con orden, claridad y seguridad técnica.</p>
           </div>
           <div className="home-services-grid home-services-grid--wide">
             {serviceHighlights.map(([title, description]) => (
@@ -77,7 +79,7 @@ export default function Home() {
             ))}
           </div>
           <div className="home-more-link">
-            <Link className="text-link" to="/servicios">Ver servicios profesionales</Link>
+            <Link className="text-link" to="/servicios">Ver servicios</Link>
           </div>
         </div>
       </section>
@@ -85,12 +87,12 @@ export default function Home() {
       <section className="section">
         <div className="wrap home-about-grid">
           <div>
-            <div className="kicker home-kicker">Sobre el estudio</div>
-            <h2>Diseño arquitectónico con control técnico.</h2>
+            <div className="kicker home-kicker">Estudio</div>
+            <h2>Arquitectura cercana, seria y bien resuelta.</h2>
           </div>
           <div>
-            <p className="section-copy">Mendieta Studio combina sensibilidad espacial, criterio constructivo y herramientas digitales para producir proyectos claros, coordinados y viables.</p>
-            <p className="section-copy home-small-copy">Trabajamos para clientes privados, promotores, instituciones y equipos profesionales que necesitan una arquitectura bien pensada y bien documentada.</p>
+            <p className="section-copy">Trabajamos desde Córdoba y Pozoblanco para clientes particulares, promotores y equipos profesionales.</p>
+            <p className="section-copy home-small-copy">El objetivo es simple: que cada proyecto esté bien pensado, bien explicado y bien preparado.</p>
             <Link className="cta-link" to="/estudio">Conocer el estudio</Link>
           </div>
         </div>
@@ -101,8 +103,8 @@ export default function Home() {
           <div className="home-cta-section">
             <div>
               <div className="kicker home-kicker">Contacto</div>
-              <h2>Cuéntenos qué quiere desarrollar.</h2>
-              <p className="section-copy home-contact-copy">Podemos revisar la idea inicial, estudiar la viabilidad del encargo o preparar una propuesta profesional ajustada al alcance del proyecto.</p>
+              <h2>¿Tiene un proyecto en mente?</h2>
+              <p className="section-copy home-contact-copy">Podemos revisar su idea, resolver dudas iniciales y preparar una propuesta profesional.</p>
             </div>
             <Link className="cta-link" to="/contacto">Solicitar consulta</Link>
           </div>
