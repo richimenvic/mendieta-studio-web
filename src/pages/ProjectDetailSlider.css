@@ -5,7 +5,9 @@
 
 .project-slider-frame {
   position: relative;
-  min-height: clamp(360px, 52vw, 720px);
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  max-height: 720px;
   border: 1px solid var(--line);
   background: var(--soft);
   overflow: hidden;
@@ -25,6 +27,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 
 .project-slider-arrow {
@@ -102,6 +105,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 
 .project-slider-thumbnail:hover,
@@ -118,12 +122,12 @@
 
 @media (max-width: 768px) {
   .project-slider-frame {
-    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .project-slider-img {
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
   }
 
   .project-slider-frame::before {
