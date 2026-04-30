@@ -39,7 +39,7 @@ export default function Studio() {
           <div className="kicker">Estudio</div>
           <h1>Mendieta Studio</h1>
           <p className="lead studio-lead">
-            Estudio de arquitectura en Córdoba y Pozoblanco, dirigido por Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909 en el Colegio Oficial de Arquitectos de Córdoba.
+            Estudio de arquitectura en Pozoblanco, Córdoba, dirigido por Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909 en el Colegio Oficial de Arquitectos de Córdoba.
           </p>
           <p className="lead studio-lead">
             Ofrecemos un servicio claro, cercano y técnico para ayudar a desarrollar cada proyecto con orden y seguridad.
