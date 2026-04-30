@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './styles.css'
 import './theme.css'
+import './commercial-refresh.css'
 
 window.__MENDIETA_APP_BOOTED = true
 
