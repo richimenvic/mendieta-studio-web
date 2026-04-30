@@ -2,42 +2,42 @@ import { Link } from 'react-router-dom'
 
 const serviceItems = [
   {
-    title: 'Anteproyecto y viabilidad',
+    title: 'Anteproyecto',
     description:
-      'Estudio inicial del encargo, criterios de implantación, organización funcional, imagen arquitectónica y primeras decisiones de alcance.'
+      'Primeras ideas, distribución, imagen general y estudio inicial del proyecto.'
   },
   {
     title: 'Proyecto básico',
     description:
-      'Definición arquitectónica y documentación necesaria para iniciar trámites, consultas técnicas o procesos de licencia.'
+      'Documentación necesaria para definir el proyecto y avanzar con trámites o consultas.'
   },
   {
     title: 'Proyecto de ejecución',
     description:
-      'Desarrollo constructivo, coordinación documental, detalles técnicos y preparación de información clara para obra.'
+      'Planos, detalles y documentos técnicos para construir con más claridad.'
   },
   {
-    title: 'Documentación técnica',
+    title: 'Licencias y documentación',
     description:
-      'Planos, memorias, mediciones, revisiones y documentación gráfica orientada a una lectura precisa del proyecto.'
+      'Preparación de planos, memorias y documentación técnica para cada gestión.'
   },
   {
     title: 'Coordinación BIM',
     description:
-      'Modelado, revisión de interferencias, coordinación interdisciplinar y control digital del desarrollo técnico.'
+      'Uso de modelos digitales para ordenar información y revisar mejor el proyecto.'
   },
   {
-    title: 'Consultoría y apoyo externo',
+    title: 'Apoyo técnico',
     description:
-      'Soporte a estudios, promotores o equipos técnicos que necesitan revisión, producción documental o criterio arquitectónico.'
+      'Ayuda a clientes, promotores y otros equipos en revisión o desarrollo de proyectos.'
   }
 ]
 
 const processSteps = [
-  ['01', 'Escuchar', 'Comprender objetivos, condicionantes, presupuesto, plazos y nivel de definición necesario.'],
-  ['02', 'Ordenar', 'Convertir la idea en una estrategia arquitectónica clara y en un alcance de trabajo realista.'],
-  ['03', 'Desarrollar', 'Producir documentación coordinada, útil para decidir, tramitar, construir o licitar.'],
-  ['04', 'Acompañar', 'Resolver ajustes técnicos y mantener la coherencia del proyecto durante su evolución.'],
+  ['01', 'Escuchar', 'Entender qué necesita el cliente.'],
+  ['02', 'Ordenar', 'Definir el alcance y los pasos del trabajo.'],
+  ['03', 'Dibujar', 'Preparar planos y documentación clara.'],
+  ['04', 'Acompañar', 'Resolver dudas durante el proceso.'],
 ]
 
 export default function Services() {
@@ -46,9 +46,9 @@ export default function Services() {
       <main className="page-hero">
         <div className="wrap">
           <div className="kicker">Servicios</div>
-          <h1>Servicios de arquitectura y documentación técnica</h1>
+          <h1>Servicios de arquitectura</h1>
           <p className="lead">
-            Acompañamos proyectos residenciales, institucionales y de equipamiento desde la idea inicial hasta una documentación clara, coordinada y viable.
+            Ayudamos a desarrollar proyectos de forma clara, ordenada y técnicamente segura.
           </p>
         </div>
       </main>
@@ -70,7 +70,7 @@ export default function Services() {
         <div className="wrap">
           <div className="section-head home-section-head">
             <div className="kicker">Proceso</div>
-            <p className="section-copy">Un método sencillo: entender bien el encargo, ordenar las decisiones y producir documentación útil para avanzar con seguridad.</p>
+            <p className="section-copy">Un proceso simple para trabajar con orden desde el inicio.</p>
           </div>
           <div className="process-grid">
             {processSteps.map(([number, title, text]) => (
@@ -88,8 +88,8 @@ export default function Services() {
         <div className="wrap home-cta-section">
           <div>
             <div className="kicker">Nuevo encargo</div>
-            <h2>¿Necesita valorar un proyecto?</h2>
-            <p className="section-copy">Podemos revisar el alcance, aclarar fases y preparar una propuesta profesional ajustada al tipo de encargo.</p>
+            <h2>¿Quiere estudiar un proyecto?</h2>
+            <p className="section-copy">Podemos revisar la idea y preparar una propuesta de trabajo.</p>
           </div>
           <Link className="cta-link" to="/contacto">Solicitar consulta</Link>
         </div>
