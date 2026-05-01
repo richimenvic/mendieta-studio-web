@@ -17,8 +17,9 @@ export default function Home() {
         <div className="wrap hero-grid home-hero-grid">
           <div>
             <div className="kicker home-kicker">Arquitecto en Pozoblanco, Córdoba</div>
-            <h1 className="home-hero-title">Viviendas, reformas, licencias y proyectos técnicos.</h1>
-            <p className="lead">Mendieta Studio — Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909.</p>
+            <h1 className="home-hero-title">Estudio de arquitectura en Pozoblanco.</h1>
+            <p className="lead">Diseño, documentación y proyectos técnicos.</p>
+            <p className="lead home-small-copy">Mendieta Studio — Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909.</p>
             <div className="home-hero-actions">
               <Link className="cta-link" to="/contacto">Consultar proyecto</Link>
               <Link className="cta-link cta-link--ghost" to="/proyectos">Ver trabajos</Link>
