@@ -5,6 +5,7 @@ import App from './App'
 import './styles.css'
 import './theme.css'
 import './commercial-refresh.css'
+import './photo-badge.css'
 
 window.__MENDIETA_APP_BOOTED = true
 
