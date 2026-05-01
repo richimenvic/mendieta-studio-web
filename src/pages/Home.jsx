@@ -46,14 +46,16 @@ export default function Home() {
           <div className="home-project-grid">
             {homeFeaturedProjects.map((project) => (
               <article className="home-project-card" key={project.slug}>
-                <Link to={`/proyectos/${project.slug}`} className="home-project-image" aria-label={`Ver proyecto ${project.title}`}>
+                <Link to={`/proyectos/${project.slug}`} className="home-project-image" aria-label={`Ver proyecto completo ${project.title}`}>
+                  <span className="home-project-photo-badge" aria-hidden="true">+ fotos</span>
                   {project.cardImage
                     ? <img className="media-img home-project-media-img" src={project.cardImage} alt={`Imagen del proyecto ${project.title}`} loading="lazy" />
                     : <span className="home-project-fallback media-avicola" aria-hidden="true" />}
                 </Link>
                 <div className="home-project-content">
-                  <h3>{project.title}</h3>
+                  <h3><Link to={`/proyectos/${project.slug}`}>{project.title}</Link></h3>
                   <p>{[project.type || project.category, project.location || 'Córdoba, España', project.year].filter(Boolean).join(' / ')}</p>
+                  <Link className="text-link home-project-detail-link" to={`/proyectos/${project.slug}`}>Ver proyecto completo</Link>
                 </div>
               </article>
             ))}
