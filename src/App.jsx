@@ -14,11 +14,11 @@ import CookiesPolicy from './pages/CookiesPolicy'
 import { siteUrl, updateSeo } from './seo'
 
 const seoByPath = {
-  '/': ['Mendieta Studio | Arquitecto en Córdoba y Pozoblanco', 'Mendieta Studio, estudio de arquitectura en Córdoba y Pozoblanco. Arquitecto colegiado nº 909 en el Colegio Oficial de Arquitectos de Córdoba.'],
-  '/proyectos': ['Proyectos de Arquitectura | Mendieta Studio', 'Proyectos de arquitectura, vivienda, equipamiento y documentación técnica realizados por Mendieta Studio.'],
-  '/estudio': ['Estudio de Arquitectura en Córdoba | Mendieta Studio', 'Mendieta Studio es un estudio de arquitectura en Córdoba y Pozoblanco, dirigido por Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909.'],
-  '/servicios': ['Servicios de Arquitectura | Mendieta Studio', 'Servicios de arquitectura: anteproyecto, proyecto básico, proyecto de ejecución, licencias, documentación técnica, BIM y apoyo profesional.'],
-  '/contacto': ['Contacto | Mendieta Studio', 'Contacto de Mendieta Studio para consultas sobre arquitectura, reformas, licencias, documentación técnica y nuevos proyectos.'],
+  '/': ['Arquitecto en Pozoblanco, Córdoba | Mendieta Studio', 'Arquitecto en Pozoblanco, Córdoba. Viviendas, reformas, licencias, proyectos técnicos y documentación. Colegiado nº 909.'],
+  '/proyectos': ['Proyectos de Arquitectura | Mendieta Studio', 'Trabajos de arquitectura, vivienda, equipamiento y documentación técnica realizados por Mendieta Studio.'],
+  '/estudio': ['Estudio de Arquitectura en Pozoblanco | Mendieta Studio', 'Estudio de arquitectura en Pozoblanco, Córdoba, dirigido por Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909.'],
+  '/servicios': ['Servicios de Arquitectura | Mendieta Studio', 'Servicios de arquitectura en Pozoblanco: viviendas, reformas, licencias, proyectos técnicos, documentación y BIM.'],
+  '/contacto': ['Contacto | Mendieta Studio', 'Contacto para consultas sobre viviendas, reformas, licencias, proyectos técnicos y documentación.'],
   '/aviso-legal': ['Aviso Legal | Mendieta Studio', 'Aviso legal de Mendieta Studio con información del titular, condiciones de uso, propiedad intelectual y jurisdicción aplicable.'],
   '/politica-privacidad': ['Política de Privacidad | Mendieta Studio', 'Política de privacidad de Mendieta Studio conforme RGPD y LOPDGDD: finalidad, bases legales, conservación y derechos del usuario.'],
   '/politica-cookies': ['Política de Cookies | Mendieta Studio', 'Información sobre el uso de cookies en mendietastudio.com, finalidades, base legal y gestión de preferencias del usuario.'],
