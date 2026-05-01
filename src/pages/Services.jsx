@@ -2,42 +2,42 @@ import { Link } from 'react-router-dom'
 
 const serviceItems = [
   {
-    title: 'Anteproyecto',
+    title: 'Viviendas',
     description:
-      'Primeras ideas, distribución, imagen general y estudio inicial del proyecto.'
+      'Proyecto y documentación para vivienda nueva o reformas.'
   },
   {
-    title: 'Proyecto básico',
+    title: 'Reformas',
     description:
-      'Documentación necesaria para definir el proyecto y avanzar con trámites o consultas.'
+      'Planos, ideas claras y apoyo técnico para definir la obra.'
   },
   {
-    title: 'Proyecto de ejecución',
+    title: 'Licencias',
     description:
-      'Planos, detalles y documentos técnicos para construir con más claridad.'
+      'Documentación técnica para permisos y trámites.'
   },
   {
-    title: 'Licencias y documentación',
+    title: 'Proyectos técnicos',
     description:
-      'Preparación de planos, memorias y documentación técnica para cada gestión.'
+      'Planos, memorias y documentos para avanzar con seguridad.'
   },
   {
-    title: 'Coordinación BIM',
+    title: 'BIM y coordinación',
     description:
-      'Uso de modelos digitales para ordenar información y revisar mejor el proyecto.'
+      'Modelos digitales para ordenar información y revisar el proyecto.'
   },
   {
-    title: 'Apoyo técnico',
+    title: 'Apoyo profesional',
     description:
-      'Ayuda a clientes, promotores y otros equipos en revisión o desarrollo de proyectos.'
+      'Ayuda técnica para clientes, promotores y otros equipos.'
   }
 ]
 
 const processSteps = [
-  ['01', 'Escuchar', 'Entender qué necesita el cliente.'],
-  ['02', 'Ordenar', 'Definir el alcance y los pasos del trabajo.'],
-  ['03', 'Dibujar', 'Preparar planos y documentación clara.'],
-  ['04', 'Acompañar', 'Resolver dudas durante el proceso.'],
+  ['01', 'Cuéntenos', 'Explique qué necesita.'],
+  ['02', 'Revisamos', 'Valoramos el alcance del trabajo.'],
+  ['03', 'Proponemos', 'Preparamos una propuesta clara.'],
+  ['04', 'Desarrollamos', 'Hacemos planos y documentación.'],
 ]
 
 export default function Services() {
@@ -48,7 +48,7 @@ export default function Services() {
           <div className="kicker">Servicios</div>
           <h1>Servicios de arquitectura</h1>
           <p className="lead">
-            Ayudamos a desarrollar proyectos de forma clara, ordenada y técnicamente segura.
+            Viviendas, reformas, licencias, proyectos técnicos y documentación.
           </p>
         </div>
       </main>
@@ -70,7 +70,7 @@ export default function Services() {
         <div className="wrap">
           <div className="section-head home-section-head">
             <div className="kicker">Proceso</div>
-            <p className="section-copy">Un proceso simple para trabajar con orden desde el inicio.</p>
+            <p className="section-copy">Un proceso simple, sin complicaciones.</p>
           </div>
           <div className="process-grid">
             {processSteps.map(([number, title, text]) => (
@@ -88,10 +88,10 @@ export default function Services() {
         <div className="wrap home-cta-section">
           <div>
             <div className="kicker">Nuevo encargo</div>
-            <h2>¿Quiere estudiar un proyecto?</h2>
-            <p className="section-copy">Podemos revisar la idea y preparar una propuesta de trabajo.</p>
+            <h2>¿Quiere consultar un proyecto?</h2>
+            <p className="section-copy">Cuéntenos la idea y le orientamos.</p>
           </div>
-          <Link className="cta-link" to="/contacto">Solicitar consulta</Link>
+          <Link className="cta-link" to="/contacto">Consultar proyecto</Link>
         </div>
       </section>
     </>
