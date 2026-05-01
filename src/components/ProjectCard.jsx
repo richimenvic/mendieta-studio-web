@@ -8,11 +8,12 @@ export default function ProjectCard({ project }) {
   return (
     <article className="featured-project">
       <Link
-        className="featured-project-media"
+        className="featured-project-media project-card-image"
         to={`/proyectos/${project.slug}`}
         aria-label={`Ver proyecto ${project.title}`}
         style={imageStyle}
       >
+        <span className="project-card-badge" aria-hidden="true">+ fotos</span>
         {project.cardImage
           ? (
             <img
