@@ -23,6 +23,29 @@
   font-size:clamp(.95rem,1.1vw,1.08rem);
 }
 
+.home-project-image{
+  isolation:isolate;
+}
+
+.home-project-photo-badge{
+  position:absolute;
+  z-index:2;
+  right:14px;
+  top:14px;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.58);
+  background:rgba(18,17,15,.66);
+  color:#fff;
+  font-size:.58rem;
+  line-height:1;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.home-project-detail-link{
+  margin-top:18px;
+}
+
 .services-grid--expanded{
   grid-template-columns:repeat(3,minmax(0,1fr));
 }
@@ -83,6 +106,12 @@
   .home-trust-line span{
     border-right:0;
     padding-right:0;
+  }
+
+  .home-project-photo-badge{
+    right:10px;
+    top:10px;
+    padding:6px 9px;
   }
 
   .home-services-grid--wide,
