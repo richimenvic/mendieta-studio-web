@@ -25,7 +25,7 @@ export default function CookiesPolicy() {
           <p>En la fecha de última actualización indicada en esta política, Mendieta Studio no tiene implementadas cookies analíticas propias ni de Google Analytics en este sitio web.</p>
 
           <h3>Cookies de terceros (si aplica)</h3>
-          <p>Tras la revisión técnica del sitio, no se cargan Google Fonts externas, scripts desde CDN, iframes embebidos, widgets de terceros ni librerías externas que instalen cookies de forma automática durante la navegación ordinaria por páginas informativas.</p>
+          <p>Tras la revisión técnica del sitio, no se cargan Google Analytics, Google Tag Manager, Meta Pixel, Google Fonts externas, scripts desde CDN, iframes de Google Maps/YouTube/Vimeo ni widgets de terceros que instalen cookies no necesarias durante la navegación ordinaria por páginas informativas.</p>
         </section>
 
         <section className="box">
