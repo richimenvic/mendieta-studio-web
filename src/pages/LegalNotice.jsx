@@ -24,6 +24,14 @@ export default function LegalNotice() {
           </section>
 
           <section>
+            <h2>Profesión regulada</h2>
+            <p><strong>Profesión:</strong> Arquitecto</p>
+            <p><strong>Nº de colegiado:</strong> 909</p>
+            <p><strong>Colegio profesional:</strong> Colegio Oficial de Arquitectos de Córdoba</p>
+            <p>Actividad sujeta a la normativa profesional y deontológica aplicable al ejercicio de la arquitectura.</p>
+          </section>
+
+          <section>
             <h2>Objeto del sitio web</h2>
             <p>
               Este sitio web tiene por objeto ofrecer información sobre la actividad profesional de Mendieta Studio, sus
@@ -96,8 +104,8 @@ export default function LegalNotice() {
             <p>
               El presente Aviso Legal se rige por la legislación española. Para la resolución de cualquier controversia
               derivada del acceso o uso del sitio web, las partes se someten a los Juzgados y Tribunales de Córdoba,
-              con renuncia expresa a cualquier otro fuero que pudiera corresponderles, salvo disposición legal en
-              contrario.
+              con renuncia expresa a cualquier otro fuero que pudiera corresponderles, salvo que la normativa
+              aplicable establezca otro fuero imperativo.
             </p>
           </section>
 
