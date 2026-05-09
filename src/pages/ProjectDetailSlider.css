@@ -22,6 +22,18 @@
   pointer-events: none;
 }
 
+.project-slider-open {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
 .project-slider-img {
   width: 100%;
   height: 100%;
@@ -29,6 +41,41 @@
   object-fit: cover;
   object-position: center;
   animation: projectSliderFade .58s ease both;
+  transition: transform .42s ease;
+}
+
+.project-slider-open:hover .project-slider-img,
+.project-slider-open:focus-visible .project-slider-img {
+  transform: scale(1.035);
+}
+
+.project-slider-open:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, .72);
+  outline-offset: -12px;
+}
+
+.project-slider-expand-label {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, .48);
+  background: rgba(27, 26, 24, .36);
+  color: #fff;
+  font-size: .62rem;
+  letter-spacing: .18em;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .24s ease, transform .24s ease, background-color .24s ease;
+}
+
+.project-slider-open:hover .project-slider-expand-label,
+.project-slider-open:focus-visible .project-slider-expand-label {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes projectSliderFade {
@@ -140,10 +187,105 @@
   transform: translateY(-2px);
 }
 
+.has-project-lightbox {
+  overflow: hidden;
+}
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 46px);
+}
+
+.project-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(10, 10, 10, .88);
+  cursor: zoom-out;
+}
+
+.project-lightbox-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1500px);
+  height: min(86vh, 900px);
+  display: grid;
+  place-items: center;
+}
+
+.project-lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, .34);
+}
+
+.project-lightbox-close,
+.project-lightbox-arrow {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, .42);
+  background: rgba(27, 26, 24, .28);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color .24s ease, border-color .24s ease;
+}
+
+.project-lightbox-close:hover,
+.project-lightbox-close:focus-visible,
+.project-lightbox-arrow:hover,
+.project-lightbox-arrow:focus-visible {
+  background: rgba(27, 26, 24, .62);
+  border-color: rgba(255, 255, 255, .72);
+  outline: none;
+}
+
+.project-lightbox-close {
+  top: 0;
+  right: 0;
+  padding: 10px 14px;
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.project-lightbox-arrow {
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 2.2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.project-lightbox-arrow--prev {
+  left: 0;
+}
+
+.project-lightbox-arrow--next {
+  right: 0;
+}
+
+.project-lightbox-counter {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: rgba(255, 255, 255, .76);
+  font-size: .68rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-slider-img,
   .project-slider-thumbnail,
-  .project-slider-thumbnail img {
+  .project-slider-thumbnail img,
+  .project-slider-expand-label {
     animation: none;
     transition: none;
   }
@@ -161,6 +303,13 @@
 
   .project-slider-frame::before {
     inset: 12px;
+  }
+
+  .project-slider-expand-label {
+    right: 12px;
+    bottom: 12px;
+    opacity: 1;
+    transform: none;
   }
 
   .project-slider-arrow {
@@ -186,5 +335,29 @@
     grid-auto-columns: 74px;
     gap: 8px;
     margin-top: 14px;
+  }
+
+  .project-lightbox {
+    padding: 14px;
+  }
+
+  .project-lightbox-content {
+    height: 86vh;
+  }
+
+  .project-lightbox-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .project-lightbox-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+
+  .project-lightbox-counter {
+    left: 10px;
+    bottom: 10px;
   }
 }
