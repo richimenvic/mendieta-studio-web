@@ -4,14 +4,14 @@
 .service-editorial-item{display:grid;grid-template-columns:minmax(240px,.45fr) minmax(0,.75fr);gap:clamp(24px,5vw,72px);padding:clamp(30px,4.5vw,56px) 0;border-bottom:1px solid var(--line)}
 .service-editorial-item h2{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:clamp(.86rem,1vw,1rem);font-weight:500;letter-spacing:.16em;line-height:1.65;text-transform:uppercase;color:var(--ink)}
 .service-editorial-item p{margin:0;max-width:760px;color:var(--muted);font-size:clamp(.98rem,1.12vw,1.08rem);line-height:1.9}
-.services-section-title{margin-bottom:clamp(30px,5vw,54px);padding-bottom:clamp(24px,4vw,36px);border-bottom:8px solid rgba(27,26,24,.08)}
+.services-section-title{margin-bottom:clamp(30px,5vw,54px);padding-bottom:clamp(24px,4vw,36px);border-bottom:8px solid rgba(255,255,255,.08)}
 .services-section-title h2{margin-bottom:22px;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:clamp(2rem,4.6vw,4rem);font-weight:650;line-height:1.05;letter-spacing:-.06em}
 .services-section-title p{margin:0;color:var(--ink);font-size:clamp(.78rem,1vw,.92rem);font-weight:700;letter-spacing:.08em;line-height:1.55;text-transform:uppercase}
-.studio-accordion{border:1px solid var(--line);background:rgba(247,242,232,.62)}
-.studio-accordion-item+.studio-accordion-item{border-top:1px solid var(--line)}
-.studio-accordion-trigger{width:100%;display:flex;align-items:center;gap:18px;padding:clamp(20px,2.6vw,30px);border:0;background:transparent;color:var(--muted);font:inherit;font-size:clamp(1rem,1.45vw,1.32rem);line-height:1.35;text-align:left;cursor:pointer}
+.studio-accordion{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.035);backdrop-filter:blur(8px)}
+.studio-accordion-item+.studio-accordion-item{border-top:1px solid rgba(255,255,255,.1)}
+.studio-accordion-trigger{width:100%;display:flex;align-items:center;gap:18px;padding:clamp(20px,2.6vw,30px);border:0;background:transparent;color:rgba(244,242,238,.62);font:inherit;font-size:clamp(1rem,1.45vw,1.32rem);line-height:1.35;text-align:left;cursor:pointer}
 .studio-accordion-trigger:hover,.studio-accordion-trigger:focus-visible,.studio-accordion-item.is-open .studio-accordion-trigger{color:var(--ink)}
-.studio-accordion-trigger:focus-visible{outline:1px solid var(--ink);outline-offset:-1px}
+.studio-accordion-trigger:focus-visible{outline:1px solid rgba(255,255,255,.42);outline-offset:-1px}
 .studio-accordion-symbol{width:22px;flex:0 0 22px;color:var(--accent);font-size:1.35rem;line-height:1;text-align:center}
 .studio-accordion-panel{padding:0 clamp(20px,2.6vw,30px) clamp(24px,3.2vw,38px)}
 .studio-accordion-panel p{margin:0;max-width:920px;color:var(--ink);font-size:clamp(1rem,1.2vw,1.16rem);line-height:1.85}
