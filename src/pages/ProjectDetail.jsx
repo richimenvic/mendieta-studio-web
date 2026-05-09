@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
 import './ProjectDetailSlider.css'
 
-function ProjectImageSlider({ images, title }) {
+function ProjectImageGallery({ images, title }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [touchStart, setTouchStart] = useState(null)
 
   useEffect(() => {
     setCurrentIndex(0)
@@ -43,88 +42,23 @@ function ProjectImageSlider({ images, title }) {
 
   if (!images?.length) return null
 
-  const handleTouchEnd = (event) => {
-    if (touchStart === null || !hasMultipleImages) return
-
-    const touchEnd = event.changedTouches[0].clientX
-    const distance = touchStart - touchEnd
-    const minSwipeDistance = 48
-
-    if (Math.abs(distance) > minSwipeDistance) {
-      distance > 0 ? goToNext() : goToPrevious()
-    }
-
-    setTouchStart(null)
-  }
-
   return (
-    <section className="project-slider section-min" aria-label={`Galería del proyecto ${title}`}>
-      <div
-        className="project-slider-frame"
-        onTouchStart={(event) => setTouchStart(event.touches[0].clientX)}
-        onTouchEnd={handleTouchEnd}
-      >
+    <section className="project-detail-gallery" aria-label={`Galería del proyecto ${title}`}>
+      {images.map((imageSrc, index) => (
         <button
-          className="project-slider-open"
+          className={`project-detail-gallery-item${index === 0 ? ' is-large' : ''}`}
+          key={`${imageSrc}-${index}`}
           type="button"
-          onClick={() => setLightboxOpen(true)}
-          aria-label="Ampliar imagen del proyecto"
+          onClick={() => {
+            setCurrentIndex(index)
+            setLightboxOpen(true)
+          }}
+          aria-label={`Ampliar imagen ${index + 1} del proyecto ${title}`}
         >
-          <img
-            className="media-img project-slider-img"
-            src={images[currentIndex]}
-            alt={`Galería ${currentIndex + 1} del proyecto ${title}`}
-            loading="lazy"
-          />
-          <span className="project-slider-expand-label">Ampliar</span>
+          <img src={imageSrc} alt={`Imagen ${index + 1} del proyecto ${title}`} loading={index === 0 ? 'eager' : 'lazy'} />
+          <span>Ampliar</span>
         </button>
-
-        {hasMultipleImages && (
-          <>
-            <button
-              className="project-slider-arrow project-slider-arrow--prev"
-              type="button"
-              onClick={goToPrevious}
-              aria-label="Ver imagen anterior"
-            >
-              ‹
-            </button>
-            <button
-              className="project-slider-arrow project-slider-arrow--next"
-              type="button"
-              onClick={goToNext}
-              aria-label="Ver imagen siguiente"
-            >
-              ›
-            </button>
-          </>
-        )}
-      </div>
-
-      {hasMultipleImages && (
-        <>
-          <div className="project-slider-footer" aria-label="Selector de imágenes">
-            <span className="project-slider-counter">
-              {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
-            </span>
-          </div>
-
-          <div className="project-slider-thumbnails" aria-label="Miniaturas de la galería">
-            {images.map((imageSrc, index) => (
-              <button
-                className={`project-slider-thumbnail${index === currentIndex ? ' is-active' : ''}`}
-                key={`${imageSrc}-${index}`}
-                type="button"
-                onClick={() => setCurrentIndex(index)}
-                aria-label={`Ver imagen ${index + 1}`}
-                aria-current={index === currentIndex ? 'true' : undefined}
-              >
-                <img src={imageSrc} alt="" loading="lazy" />
-              </button>
-            ))}
-          </div>
-        </>
-      )}
+      ))}
 
       {lightboxOpen && (
         <div className="project-lightbox" role="dialog" aria-modal="true" aria-label={`Imagen ampliada del proyecto ${title}`}>
@@ -151,19 +85,37 @@ export default function ProjectDetail() {
   const project = getProjectBySlug(slug)
   if (!project) return <main className="page-hero"><div className="wrap"><h1>Proyecto no encontrado</h1></div></main>
 
-  const sliderImages = [project.detailImage, ...(project.galleryImages || [])].filter(Boolean)
+  const galleryImages = [project.detailImage, ...(project.galleryImages || [])].filter(Boolean)
+  const facts = Object.entries({ Ubicación: project.location, Año: project.year, Estado: project.status, 'Fase actual': project.phase, Cliente: project.client, 'Proyecto para': project.projectFor, Rol: project.role, Tipología: project.type }).filter(([, value]) => value)
 
   return (
-    <main className="page-hero">
-      <div className="wrap">
-        <div className="kicker">Proyecto</div>
-        <h1>{project.title}</h1>
-        <ProjectImageSlider images={sliderImages} title={project.title} />
-        <p>{project.description}</p>
-        <dl className="project-facts">
-          {Object.entries({ Ubicación: project.location, Año: project.year, Estado: project.status, 'Fase actual': project.phase, Cliente: project.client, 'Proyecto para': project.projectFor, Rol: project.role, Tipología: project.type }).map(([k, v]) => v && <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
-        </dl>
-        {project.legalNote && <p className="legal-note">{project.legalNote}</p>}
+    <main className="project-detail-page">
+      <div className="project-detail-shell">
+        <ProjectImageGallery images={galleryImages} title={project.title} />
+
+        <aside className="project-detail-info" aria-label="Información del proyecto">
+          <div className="project-detail-info-inner">
+            <div className="kicker">Proyecto</div>
+            <h1>{project.title}</h1>
+            <p className="project-detail-description">{project.description}</p>
+
+            <dl className="project-detail-facts">
+              {facts.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            {project.legalNote && <p className="legal-note project-detail-legal-note">{project.legalNote}</p>}
+
+            <nav className="project-detail-actions" aria-label="Navegación de proyecto">
+              <Link className="text-link" to="/proyectos">Volver a proyectos</Link>
+              <Link className="text-link" to="/contacto">Consultar proyecto</Link>
+            </nav>
+          </div>
+        </aside>
       </div>
     </main>
   )
