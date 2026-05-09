@@ -43,7 +43,7 @@ function ProjectImageGallery({ images, title }) {
   if (!images?.length) return null
 
   return (
-    <section className="project-detail-gallery" aria-label={`Galería del proyecto ${title}`}>
+    <section className={`project-detail-gallery${hasMultipleImages ? '' : ' is-single'}`} aria-label={`Galería del proyecto ${title}`}>
       {images.map((imageSrc, index) => (
         <button
           className={`project-detail-gallery-item${index === 0 ? ' is-large' : ''}`}
@@ -98,6 +98,11 @@ export default function ProjectDetail() {
 
         <aside className="project-detail-info" aria-label="Información del proyecto">
           <div className="project-detail-info-inner">
+            <nav className="project-detail-top-nav" aria-label="Proyecto anterior y siguiente">
+              <Link className="project-detail-arrow" to={`/proyectos/${previousProject.slug}`} aria-label={`Proyecto anterior: ${previousProject.title}`}>←</Link>
+              <Link className="project-detail-arrow" to={`/proyectos/${nextProject.slug}`} aria-label={`Proyecto siguiente: ${nextProject.title}`}>→</Link>
+            </nav>
+
             <div className="kicker">Proyecto</div>
             <h1>{project.title}</h1>
             <p className="project-detail-description">{project.description}</p>
@@ -114,10 +119,6 @@ export default function ProjectDetail() {
             {project.legalNote && <p className="legal-note project-detail-legal-note">{project.legalNote}</p>}
 
             <nav className="project-detail-actions" aria-label="Navegación de proyecto">
-              <div className="project-detail-arrows" aria-label="Proyecto anterior y siguiente">
-                <Link className="project-detail-arrow" to={`/proyectos/${previousProject.slug}`} aria-label={`Proyecto anterior: ${previousProject.title}`}>←</Link>
-                <Link className="project-detail-arrow" to={`/proyectos/${nextProject.slug}`} aria-label={`Proyecto siguiente: ${nextProject.title}`}>→</Link>
-              </div>
               <Link className="text-link" to="/proyectos">Volver a proyectos</Link>
               <Link className="text-link" to="/contacto">Consultar proyecto</Link>
             </nav>
