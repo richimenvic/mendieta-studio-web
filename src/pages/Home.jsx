@@ -60,18 +60,18 @@ export default function Home() {
       </section>
 
       <section className="section home-services-section">
-        <div className="wrap">
-          <div className="section-head home-section-head">
+        <div className="wrap home-about-grid">
+          <div>
             <div className="kicker home-kicker">Servicios</div>
-            <p className="section-copy">Diseño, técnica y gestión para desarrollar cada encargo con claridad.</p>
+            <h2>Diseño, técnica y gestión para desarrollar cada encargo con claridad.</h2>
           </div>
-          <div className="home-services-minimal" role="list">
-            {serviceHighlights.map((service) => (
-              <div className="home-service-line" key={service} role="listitem">{service}</div>
-            ))}
-          </div>
-          <div className="home-more-link">
-            <Link className="text-link" to="/servicios">Ver servicios</Link>
+          <div>
+            <div className="home-services-minimal" role="list">
+              {serviceHighlights.map((service) => (
+                <div className="home-service-line" key={service} role="listitem">{service}</div>
+              ))}
+            </div>
+            <Link className="cta-link" to="/servicios">Ver servicios</Link>
           </div>
         </div>
       </section>
