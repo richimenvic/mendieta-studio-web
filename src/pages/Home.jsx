@@ -32,29 +32,31 @@ export default function Home() {
       </section>
 
       <section className="section section-featured">
-        <div className="wrap">
-          <div className="section-head home-section-head">
+        <div className="wrap home-about-grid">
+          <div>
             <div className="kicker home-kicker">Proyectos</div>
-            <p className="section-copy">Una selección de trabajos realizados.</p>
+            <h2>Una selección de trabajos realizados.</h2>
           </div>
-          <div className="home-project-grid">
-            {homeFeaturedProjects.map((project) => (
-              <article className="home-project-card" key={project.slug}>
-                <Link to={`/proyectos/${project.slug}`} className="home-project-image" aria-label={`Ver proyecto completo ${project.title}`}>
-                  <span className="home-project-photo-badge" aria-hidden="true">+ fotos</span>
-                  {project.cardImage
-                    ? <img className="media-img home-project-media-img" src={project.cardImage} alt={`Imagen del proyecto ${project.title}`} loading="lazy" />
-                    : <span className="home-project-fallback media-avicola" aria-hidden="true" />}
-                </Link>
-                <div className="home-project-content">
-                  <h3><Link to={`/proyectos/${project.slug}`}>{project.title}</Link></h3>
-                  <p>{[project.type || project.category, project.location || 'Córdoba, España', project.year].filter(Boolean).join(' / ')}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="home-more-link">
-            <Link className="text-link" to="/proyectos">Ver todos los proyectos</Link>
+          <div>
+            <div className="home-project-grid">
+              {homeFeaturedProjects.map((project) => (
+                <article className="home-project-card" key={project.slug}>
+                  <Link to={`/proyectos/${project.slug}`} className="home-project-image" aria-label={`Ver proyecto completo ${project.title}`}>
+                    <span className="home-project-photo-badge" aria-hidden="true">+ fotos</span>
+                    {project.cardImage
+                      ? <img className="media-img home-project-media-img" src={project.cardImage} alt={`Imagen del proyecto ${project.title}`} loading="lazy" />
+                      : <span className="home-project-fallback media-avicola" aria-hidden="true" />}
+                  </Link>
+                  <div className="home-project-content">
+                    <h3><Link to={`/proyectos/${project.slug}`}>{project.title}</Link></h3>
+                    <p>{[project.type || project.category, project.location || 'Córdoba, España', project.year].filter(Boolean).join(' / ')}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="home-more-link">
+              <Link className="cta-link" to="/proyectos">Ver todos los proyectos</Link>
+            </div>
           </div>
         </div>
       </section>
