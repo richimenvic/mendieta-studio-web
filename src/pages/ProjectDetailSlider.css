@@ -36,8 +36,8 @@
 }
 
 .project-detail-gallery.is-single .project-detail-gallery-item{
-  min-height:calc(100vh - 84px);
-  aspect-ratio:auto;
+  min-height:clamp(440px,52vw,720px);
+  aspect-ratio:16 / 10;
 }
 
 .project-detail-gallery-item img{
