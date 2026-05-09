@@ -136,7 +136,38 @@
   margin-top:clamp(30px,4vw,56px);
   display:flex;
   flex-wrap:wrap;
+  align-items:center;
   gap:18px 28px;
+}
+
+.project-detail-arrows{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:2px;
+}
+
+.project-detail-arrow{
+  width:42px;
+  height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  color:var(--ink);
+  font-size:1.3rem;
+  line-height:1;
+  transition:background-color .24s ease,color .24s ease,border-color .24s ease,transform .24s ease;
+}
+
+.project-detail-arrow:hover,
+.project-detail-arrow:focus-visible{
+  background:var(--ink);
+  color:var(--bg);
+  border-color:var(--ink);
+  outline:none;
+  transform:translateY(-1px);
 }
 
 .has-project-lightbox{overflow:hidden}
@@ -228,7 +259,8 @@
 
 @media(prefers-reduced-motion:reduce){
   .project-detail-gallery-item img,
-  .project-detail-gallery-item span{transition:none}
+  .project-detail-gallery-item span,
+  .project-detail-arrow{transition:none}
 }
 
 @media(max-width:1320px){
@@ -270,6 +302,9 @@
   .project-detail-info{padding:64px 0 44px}
   .project-detail-info-inner{width:min(calc(100% - 32px),var(--max))}
   .project-detail-facts div{grid-template-columns:1fr;gap:6px}
+  .project-detail-actions{gap:14px 22px}
+  .project-detail-arrows{margin-bottom:4px}
+  .project-detail-arrow{width:38px;height:38px;font-size:1.18rem}
   .project-lightbox{padding:14px}
   .project-lightbox-content{height:86vh}
   .project-lightbox-close{top:10px;right:10px}
