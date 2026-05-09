@@ -9,6 +9,13 @@ const studioBlocks = [
     ]
   },
   {
+    title: 'Experiencia y colaboración',
+    text: [
+      'Además del trabajo local, el estudio cuenta con experiencia en proyectos internacionales y colaboraciones técnicas de alta exigencia.',
+      'Hemos participado como partner de arquitectura y como arquitecto local en proyectos de gran escala, aportando coordinación, criterio técnico y conocimiento del contexto normativo.'
+    ]
+  },
+  {
     title: 'Cómo trabajamos',
     text: [
       'Primero entendemos el encargo y sus necesidades reales.',
@@ -42,7 +49,7 @@ export default function Studio() {
             Estudio de arquitectura en Pozoblanco, Córdoba, dirigido por Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909 en el Colegio Oficial de Arquitectos de Córdoba.
           </p>
           <p className="lead studio-lead">
-            Ofrecemos un servicio claro, cercano y técnico para ayudar a desarrollar cada proyecto con orden y seguridad.
+            Combinamos un servicio cercano y técnico con experiencia en proyectos internacionales, colaborando como partner de arquitectura y arquitecto local en encargos de alta exigencia.
           </p>
         </div>
       </main>
