@@ -1,9 +1,43 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+const inquiryOptions = [
+  'Arquitectura',
+  'Desarrollo de proyecto',
+  'Documentación técnica',
+  'Coordinación BIM',
+  'Consultoría técnica',
+  'Otro'
+]
 
 export default function ContactForm() {
   const [status, setStatus] = useState('')
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [inquiryType, setInquiryType] = useState('')
+  const [isSelectOpen, setIsSelectOpen] = useState(false)
+  const selectRef = useRef(null)
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (selectRef.current && !selectRef.current.contains(event.target)) {
+        setIsSelectOpen(false)
+      }
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsSelectOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick)
+    document.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -28,6 +62,7 @@ export default function ContactForm() {
       if (result.success) {
         setStatus('Gracias por su mensaje. Nos pondremos en contacto con usted a la mayor brevedad posible.')
         form.reset()
+        setInquiryType('')
       } else {
         setError(true)
         setStatus('No se pudo enviar su consulta. Inténtelo nuevamente en unos minutos.')
@@ -61,18 +96,36 @@ export default function ContactForm() {
         </div>
         <div className="form-field form-field--full">
           <label htmlFor="contact-inquiry-type">Tipo de consulta</label>
-          <div className="select-wrap">
-            <select id="contact-inquiry-type" name="inquiry_type" required defaultValue="">
-              <option value="" disabled>
-                Seleccione una opción
-              </option>
-              <option>Arquitectura</option>
-              <option>Desarrollo de proyecto</option>
-              <option>Documentación técnica</option>
-              <option>Coordinación BIM</option>
-              <option>Consultoría técnica</option>
-              <option>Otro</option>
-            </select>
+          <div className={`select-wrap ${isSelectOpen ? 'is-open' : ''}`} ref={selectRef}>
+            <input id="contact-inquiry-type" name="inquiry_type" type="hidden" value={inquiryType} required />
+            <button
+              type="button"
+              className={`select-trigger ${inquiryType ? 'has-value' : ''}`}
+              aria-haspopup="listbox"
+              aria-expanded={isSelectOpen}
+              aria-labelledby="contact-inquiry-type"
+              onClick={() => setIsSelectOpen((open) => !open)}
+            >
+              {inquiryType || 'Seleccione una opción'}
+            </button>
+            <ul className="select-menu" role="listbox" aria-label="Tipo de consulta">
+              {inquiryOptions.map((option) => (
+                <li key={option}>
+                  <button
+                    type="button"
+                    className={`select-option ${inquiryType === option ? 'is-selected' : ''}`}
+                    role="option"
+                    aria-selected={inquiryType === option}
+                    onClick={() => {
+                      setInquiryType(option)
+                      setIsSelectOpen(false)
+                    }}
+                  >
+                    {option}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="form-field form-field--full">
