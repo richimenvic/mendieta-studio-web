@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getProjectBySlug } from '../data/projects'
+import { getProjectBySlug, projects } from '../data/projects'
 import './ProjectDetailSlider.css'
 
 function ProjectImageGallery({ images, title }) {
@@ -85,6 +85,9 @@ export default function ProjectDetail() {
   const project = getProjectBySlug(slug)
   if (!project) return <main className="page-hero"><div className="wrap"><h1>Proyecto no encontrado</h1></div></main>
 
+  const projectIndex = projects.findIndex((item) => item.slug === project.slug)
+  const previousProject = projects[(projectIndex - 1 + projects.length) % projects.length]
+  const nextProject = projects[(projectIndex + 1) % projects.length]
   const galleryImages = [project.detailImage, ...(project.galleryImages || [])].filter(Boolean)
   const facts = Object.entries({ Ubicación: project.location, Año: project.year, Estado: project.status, 'Fase actual': project.phase, Cliente: project.client, 'Proyecto para': project.projectFor, Rol: project.role, Tipología: project.type }).filter(([, value]) => value)
 
@@ -111,6 +114,10 @@ export default function ProjectDetail() {
             {project.legalNote && <p className="legal-note project-detail-legal-note">{project.legalNote}</p>}
 
             <nav className="project-detail-actions" aria-label="Navegación de proyecto">
+              <div className="project-detail-arrows" aria-label="Proyecto anterior y siguiente">
+                <Link className="project-detail-arrow" to={`/proyectos/${previousProject.slug}`} aria-label={`Proyecto anterior: ${previousProject.title}`}>←</Link>
+                <Link className="project-detail-arrow" to={`/proyectos/${nextProject.slug}`} aria-label={`Proyecto siguiente: ${nextProject.title}`}>→</Link>
+              </div>
               <Link className="text-link" to="/proyectos">Volver a proyectos</Link>
               <Link className="text-link" to="/contacto">Consultar proyecto</Link>
             </nav>
