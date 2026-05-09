@@ -5,15 +5,15 @@ import './ProjectDetailSlider.css'
 
 function ProjectImageSlider({ images, title }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
   const [touchStart, setTouchStart] = useState(null)
 
   useEffect(() => {
     setCurrentIndex(0)
+    setLightboxOpen(false)
   }, [images])
 
-  if (!images?.length) return null
-
-  const hasMultipleImages = images.length > 1
+  const hasMultipleImages = images?.length > 1
 
   const goToPrevious = () => {
     setCurrentIndex((index) => (index === 0 ? images.length - 1 : index - 1))
@@ -22,6 +22,26 @@ function ProjectImageSlider({ images, title }) {
   const goToNext = () => {
     setCurrentIndex((index) => (index === images.length - 1 ? 0 : index + 1))
   }
+
+  useEffect(() => {
+    if (!lightboxOpen) return undefined
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setLightboxOpen(false)
+      if (event.key === 'ArrowLeft' && hasMultipleImages) goToPrevious()
+      if (event.key === 'ArrowRight' && hasMultipleImages) goToNext()
+    }
+
+    document.body.classList.add('has-project-lightbox')
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.classList.remove('has-project-lightbox')
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [lightboxOpen, hasMultipleImages])
+
+  if (!images?.length) return null
 
   const handleTouchEnd = (event) => {
     if (touchStart === null || !hasMultipleImages) return
@@ -44,12 +64,20 @@ function ProjectImageSlider({ images, title }) {
         onTouchStart={(event) => setTouchStart(event.touches[0].clientX)}
         onTouchEnd={handleTouchEnd}
       >
-        <img
-          className="media-img project-slider-img"
-          src={images[currentIndex]}
-          alt={`Galería ${currentIndex + 1} del proyecto ${title}`}
-          loading="lazy"
-        />
+        <button
+          className="project-slider-open"
+          type="button"
+          onClick={() => setLightboxOpen(true)}
+          aria-label="Ampliar imagen del proyecto"
+        >
+          <img
+            className="media-img project-slider-img"
+            src={images[currentIndex]}
+            alt={`Galería ${currentIndex + 1} del proyecto ${title}`}
+            loading="lazy"
+          />
+          <span className="project-slider-expand-label">Ampliar</span>
+        </button>
 
         {hasMultipleImages && (
           <>
@@ -96,6 +124,23 @@ function ProjectImageSlider({ images, title }) {
             ))}
           </div>
         </>
+      )}
+
+      {lightboxOpen && (
+        <div className="project-lightbox" role="dialog" aria-modal="true" aria-label={`Imagen ampliada del proyecto ${title}`}>
+          <button className="project-lightbox-backdrop" type="button" onClick={() => setLightboxOpen(false)} aria-label="Cerrar imagen ampliada" />
+          <div className="project-lightbox-content">
+            <button className="project-lightbox-close" type="button" onClick={() => setLightboxOpen(false)} aria-label="Cerrar imagen ampliada">Cerrar</button>
+            {hasMultipleImages && (
+              <button className="project-lightbox-arrow project-lightbox-arrow--prev" type="button" onClick={goToPrevious} aria-label="Ver imagen anterior">‹</button>
+            )}
+            <img src={images[currentIndex]} alt={`Imagen ampliada ${currentIndex + 1} del proyecto ${title}`} />
+            {hasMultipleImages && (
+              <button className="project-lightbox-arrow project-lightbox-arrow--next" type="button" onClick={goToNext} aria-label="Ver imagen siguiente">›</button>
+            )}
+            <span className="project-lightbox-counter">{String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+          </div>
+        </div>
       )}
     </section>
   )
