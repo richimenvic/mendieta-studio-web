@@ -1,14 +1,82 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { featuredProjects } from '../data/projects'
+import '../services.css'
 
 const homeFeaturedProjects = featuredProjects.slice(0, 3)
 
 const serviceHighlights = [
-  ['Viviendas', 'Proyecto y documentación para vivienda nueva o reformas.'],
-  ['Reformas', 'Planos, criterios técnicos y apoyo para definir la obra.'],
-  ['Licencias', 'Documentación técnica para trámites y permisos.'],
-  ['Proyectos técnicos', 'Planos, memorias y coordinación para avanzar con seguridad.'],
+  {
+    title: 'Arquitectura residencial',
+    description: 'Proyectos de vivienda nueva, reforma e intervención integral desde una visión clara, funcional y duradera.'
+  },
+  {
+    title: 'Reformas y rehabilitaciones',
+    description: 'Transformamos espacios existentes respetando su carácter y adaptándolos a nuevas formas de uso.'
+  },
+  {
+    title: 'Licencias de obra y actividad',
+    description: 'Documentación técnica para obras, aperturas, locales comerciales, oficinas y actividades profesionales.'
+  },
+  {
+    title: 'Cambios de uso',
+    description: 'Estudio de viabilidad técnica y normativa para transformar locales u otros espacios en vivienda.'
+  },
+  {
+    title: 'Interiorismo y adecuación de espacios',
+    description: 'Soluciones interiores coherentes con la arquitectura, el uso previsto y la experiencia del espacio.'
+  },
+  {
+    title: 'Documentación técnica y BIM',
+    description: 'Planos, modelos digitales, mediciones y documentación coordinada para ordenar el proyecto.'
+  }
 ]
+
+const homeWorkSteps = [
+  {
+    title: 'Primera consulta',
+    text: 'Escuchamos la necesidad del cliente, revisamos el punto de partida y orientamos los primeros pasos.'
+  },
+  {
+    title: 'Estudio de viabilidad',
+    text: 'Analizamos condiciones del inmueble, normativa aplicable y posibilidades reales antes de avanzar.'
+  },
+  {
+    title: 'Propuesta y proyecto técnico',
+    text: 'Desarrollamos una solución clara y documentada, ajustada al uso, al presupuesto y a la normativa.'
+  },
+  {
+    title: 'Tramitación y documentación',
+    text: 'Preparamos y ordenamos la documentación necesaria para su presentación ante el organismo competente.'
+  },
+  {
+    title: 'Obra y seguimiento',
+    text: 'Cuando el encargo lo requiere, acompañamos la fase de obra para mantener la coherencia del proyecto.'
+  }
+]
+
+function HomeAccordion({ items }) {
+  const [openIndex, setOpenIndex] = useState(0)
+
+  return (
+    <div className="studio-accordion home-accordion">
+      {items.map((item, index) => {
+        const isOpen = openIndex === index
+        const label = `${index + 1}. ${item.title}`
+
+        return (
+          <article className={`studio-accordion-item${isOpen ? ' is-open' : ''}`} key={label}>
+            <button className="studio-accordion-trigger" type="button" onClick={() => setOpenIndex(isOpen ? -1 : index)} aria-expanded={isOpen}>
+              <span className="studio-accordion-symbol" aria-hidden="true">{isOpen ? '−' : '+'}</span>
+              <span>{label}</span>
+            </button>
+            {isOpen && <div className="studio-accordion-panel"><p>{item.text}</p></div>}
+          </article>
+        )
+      })}
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -28,7 +96,7 @@ export default function Home() {
               <span>Vivienda</span>
               <span>Reformas</span>
               <span>Licencias</span>
-              <span>Documentación técnica</span>
+              <span>Cambios de uso</span>
             </div>
           </div>
           <figure className="hero-image hero-image-photo">
@@ -66,23 +134,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section home-services-section">
         <div className="wrap">
           <div className="section-head home-section-head">
             <div className="kicker home-kicker">Servicios</div>
-            <p className="section-copy">Lo que puede necesitar un cliente antes de una obra o trámite.</p>
+            <p className="section-copy">Arquitectura, reformas, licencias y documentación técnica con una metodología clara.</p>
           </div>
-          <div className="home-services-grid home-services-grid--wide">
-            {serviceHighlights.map(([title, description]) => (
-              <article className="box home-service-card" key={title}>
-                <h3>{title}</h3>
-                <p>{description}</p>
+          <div className="services-editorial-list home-services-editorial" role="list">
+            {serviceHighlights.map((service) => (
+              <article className="service-editorial-item" key={service.title} role="listitem">
+                <h2>{service.title}</h2>
+                <p>{service.description}</p>
               </article>
             ))}
           </div>
           <div className="home-more-link">
             <Link className="text-link" to="/servicios">Ver servicios</Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section home-process-section">
+        <div className="wrap">
+          <div className="services-section-title home-process-title">
+            <h2>Cómo trabajamos</h2>
+            <p>Nuestra metodología de trabajo explicada paso a paso.</p>
+          </div>
+          <HomeAccordion items={homeWorkSteps} />
         </div>
       </section>
 
