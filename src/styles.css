@@ -429,9 +429,9 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
 }
 
 .contact-form input,
-.contact-form select,
+.contact-form .select-trigger,
 .contact-form textarea,
-.contact-form button{
+.contact-form-actions button{
   -webkit-appearance:none;
   appearance:none;
   width:100%;
@@ -444,7 +444,7 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
 }
 
 .contact-form input,
-.contact-form select,
+.contact-form .select-trigger,
 .contact-form textarea{
   padding:14px 16px;
   font-size:.95rem;
@@ -473,18 +473,64 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   transform:translateY(-65%) rotate(45deg);
 }
 
-.contact-form select{
+.select-trigger{
   cursor:pointer;
+  text-align:left;
   padding-right:42px;
-  background-color:#080908;
-  border-color:color-mix(in srgb, var(--line) 72%, #b49b6a 28%);
-  color:var(--ink);
-  color-scheme:dark;
+  background-color:#050605;
+  border-color:rgba(210,190,150,.45);
+  color:color-mix(in srgb, var(--muted) 74%, #f2efe7 26%);
 }
 
-.contact-form select option{
-  background-color:#080908;
-  color:var(--ink);
+.select-trigger.has-value{
+  color:#f2efe7;
+}
+
+.select-menu{
+  position:absolute;
+  top:calc(100% + 4px);
+  left:0;
+  z-index:12;
+  width:100%;
+  margin:0;
+  padding:4px;
+  list-style:none;
+  border:1px solid rgba(210,190,150,.45);
+  background:#050605;
+  max-height:260px;
+  overflow:auto;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-4px);
+  transition:opacity .18s ease, transform .18s ease;
+}
+
+.select-wrap.is-open .select-menu{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+.select-option{
+  width:100%;
+  padding:11px 12px;
+  text-align:left;
+  border:0;
+  background:transparent;
+  color:#f2efe7;
+  font:inherit;
+  line-height:1.35;
+  cursor:pointer;
+}
+
+.select-option:hover,
+.select-option:focus-visible{
+  outline:none;
+  background:rgba(210,190,150,.12);
+}
+
+.select-option.is-selected{
+  color:#d2be96;
 }
 
 .contact-form textarea{
@@ -493,13 +539,13 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
 }
 
 .contact-form input:hover,
-.contact-form select:hover,
+.contact-form .select-trigger:hover,
 .contact-form textarea:hover{
   border-color:color-mix(in srgb, var(--ink) 28%, transparent);
 }
 
 .contact-form input:focus-visible,
-.contact-form select:focus-visible,
+.contact-form .select-trigger:focus-visible,
 .contact-form textarea:focus-visible{
   outline:none;
   border-color:color-mix(in srgb, var(--ink) 72%, #b49b6a 28%);
@@ -513,7 +559,7 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   margin-top:22px;
 }
 
-.contact-form button{
+.contact-form-actions button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -529,18 +575,18 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   cursor:pointer;
 }
 
-.contact-form button:hover,
-.contact-form button:focus-visible{
+.contact-form-actions button:hover,
+.contact-form-actions button:focus-visible{
   background:var(--ink);
   color:var(--paper);
 }
 
-.contact-form button:focus-visible{
+.contact-form-actions button:focus-visible{
   outline:none;
   box-shadow:0 0 0 1px color-mix(in srgb, var(--ink) 28%, transparent);
 }
 
-.contact-form button:disabled{
+.contact-form-actions button:disabled{
   opacity:.62;
   cursor:wait;
 }
@@ -581,7 +627,7 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
     grid-column:auto;
   }
 
-  .contact-form button{
+  .contact-form-actions button{
     width:100%;
   }
 }
@@ -620,7 +666,7 @@ footer{padding:52px 0 68px;border-top:1px solid var(--line);color:var(--muted);f
   }
 
   .contact-form input,
-  .contact-form select,
+  .contact-form .select-trigger,
   .contact-form textarea{
     padding:12px 14px;
     font-size:.93rem;
