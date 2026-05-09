@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { featuredProjects } from '../data/projects'
 import '../services.css'
@@ -6,77 +5,11 @@ import '../services.css'
 const homeFeaturedProjects = featuredProjects.slice(0, 3)
 
 const serviceHighlights = [
-  {
-    title: 'Arquitectura residencial',
-    description: 'Proyectos de vivienda nueva, reforma e intervención integral desde una visión clara, funcional y duradera.'
-  },
-  {
-    title: 'Reformas y rehabilitaciones',
-    description: 'Transformamos espacios existentes respetando su carácter y adaptándolos a nuevas formas de uso.'
-  },
-  {
-    title: 'Licencias de obra y actividad',
-    description: 'Documentación técnica para obras, aperturas, locales comerciales, oficinas y actividades profesionales.'
-  },
-  {
-    title: 'Cambios de uso',
-    description: 'Estudio de viabilidad técnica y normativa para transformar locales u otros espacios en vivienda.'
-  },
-  {
-    title: 'Interiorismo y adecuación de espacios',
-    description: 'Soluciones interiores coherentes con la arquitectura, el uso previsto y la experiencia del espacio.'
-  },
-  {
-    title: 'Documentación técnica y BIM',
-    description: 'Planos, modelos digitales, mediciones y documentación coordinada para ordenar el proyecto.'
-  }
+  'Arquitectura residencial',
+  'Reformas y rehabilitaciones',
+  'Licencias y cambios de uso',
+  'Documentación técnica y BIM'
 ]
-
-const homeWorkSteps = [
-  {
-    title: 'Primera consulta',
-    text: 'Escuchamos la necesidad del cliente, revisamos el punto de partida y orientamos los primeros pasos.'
-  },
-  {
-    title: 'Estudio de viabilidad',
-    text: 'Analizamos condiciones del inmueble, normativa aplicable y posibilidades reales antes de avanzar.'
-  },
-  {
-    title: 'Propuesta y proyecto técnico',
-    text: 'Desarrollamos una solución clara y documentada, ajustada al uso, al presupuesto y a la normativa.'
-  },
-  {
-    title: 'Tramitación y documentación',
-    text: 'Preparamos y ordenamos la documentación necesaria para su presentación ante el organismo competente.'
-  },
-  {
-    title: 'Obra y seguimiento',
-    text: 'Cuando el encargo lo requiere, acompañamos la fase de obra para mantener la coherencia del proyecto.'
-  }
-]
-
-function HomeAccordion({ items }) {
-  const [openIndex, setOpenIndex] = useState(0)
-
-  return (
-    <div className="studio-accordion home-accordion">
-      {items.map((item, index) => {
-        const isOpen = openIndex === index
-        const label = `${index + 1}. ${item.title}`
-
-        return (
-          <article className={`studio-accordion-item${isOpen ? ' is-open' : ''}`} key={label}>
-            <button className="studio-accordion-trigger" type="button" onClick={() => setOpenIndex(isOpen ? -1 : index)} aria-expanded={isOpen}>
-              <span className="studio-accordion-symbol" aria-hidden="true">{isOpen ? '−' : '+'}</span>
-              <span>{label}</span>
-            </button>
-            {isOpen && <div className="studio-accordion-panel"><p>{item.text}</p></div>}
-          </article>
-        )
-      })}
-    </div>
-  )
-}
 
 export default function Home() {
   return (
@@ -84,19 +17,12 @@ export default function Home() {
       <section className="hero hero-editorial">
         <div className="wrap hero-grid home-hero-grid">
           <div>
-            <div className="kicker home-kicker">Arquitecto en Pozoblanco, Córdoba</div>
-            <h1 className="home-hero-title">Estudio de arquitectura en Pozoblanco.</h1>
-            <p className="lead">Diseño, documentación y proyectos técnicos.</p>
-            <p className="lead home-small-copy">Mendieta Studio — Ricardo Javier Mendieta Cárdenas, arquitecto colegiado nº 909.</p>
+            <div className="kicker home-kicker">Mendieta Studio</div>
+            <h1 className="home-hero-title">La belleza de un espacio empieza cuando se habita.</h1>
+            <p className="lead">Arquitectura, reformas, licencias y documentación técnica desde Pozoblanco, Córdoba.</p>
             <div className="home-hero-actions">
               <Link className="cta-link" to="/contacto">Consultar proyecto</Link>
-              <Link className="cta-link cta-link--ghost" to="/proyectos">Ver trabajos</Link>
-            </div>
-            <div className="hero-meta-line home-trust-line" aria-label="Ámbitos de trabajo">
-              <span>Vivienda</span>
-              <span>Reformas</span>
-              <span>Licencias</span>
-              <span>Cambios de uso</span>
+              <Link className="cta-link cta-link--ghost" to="/proyectos">Ver proyectos</Link>
             </div>
           </div>
           <figure className="hero-image hero-image-photo">
@@ -109,7 +35,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head home-section-head">
             <div className="kicker home-kicker">Proyectos</div>
-            <p className="section-copy">Algunos trabajos realizados.</p>
+            <p className="section-copy">Una selección de trabajos realizados.</p>
           </div>
           <div className="home-project-grid">
             {homeFeaturedProjects.map((project) => (
@@ -123,7 +49,6 @@ export default function Home() {
                 <div className="home-project-content">
                   <h3><Link to={`/proyectos/${project.slug}`}>{project.title}</Link></h3>
                   <p>{[project.type || project.category, project.location || 'Córdoba, España', project.year].filter(Boolean).join(' / ')}</p>
-                  <Link className="text-link home-project-detail-link" to={`/proyectos/${project.slug}`}>Ver proyecto completo</Link>
                 </div>
               </article>
             ))}
@@ -138,14 +63,11 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head home-section-head">
             <div className="kicker home-kicker">Servicios</div>
-            <p className="section-copy">Arquitectura, reformas, licencias y documentación técnica con una metodología clara.</p>
+            <p className="section-copy">Diseño, técnica y gestión para desarrollar cada encargo con claridad.</p>
           </div>
-          <div className="services-editorial-list home-services-editorial" role="list">
+          <div className="home-services-minimal" role="list">
             {serviceHighlights.map((service) => (
-              <article className="service-editorial-item" key={service.title} role="listitem">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-              </article>
+              <div className="home-service-line" key={service} role="listitem">{service}</div>
             ))}
           </div>
           <div className="home-more-link">
@@ -154,25 +76,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section home-process-section">
-        <div className="wrap">
-          <div className="services-section-title home-process-title">
-            <h2>Cómo trabajamos</h2>
-            <p>Nuestra metodología de trabajo explicada paso a paso.</p>
-          </div>
-          <HomeAccordion items={homeWorkSteps} />
-        </div>
-      </section>
-
       <section className="section">
         <div className="wrap home-about-grid">
           <div>
             <div className="kicker home-kicker">Estudio</div>
-            <h2>Arquitectura clara y cercana.</h2>
+            <h2>Arquitectura con criterio, oficio y atención al detalle.</h2>
           </div>
           <div>
-            <p className="section-copy">Estudio de arquitectura en Pozoblanco, Córdoba.</p>
-            <p className="section-copy home-small-copy">Atendemos a particulares, promotores y equipos profesionales.</p>
+            <p className="section-copy">Estudio de arquitectura en Pozoblanco, Córdoba, con experiencia en proyectos locales e internacionales.</p>
             <Link className="cta-link" to="/estudio">Conocer el estudio</Link>
           </div>
         </div>
@@ -183,8 +94,8 @@ export default function Home() {
           <div className="home-cta-section">
             <div>
               <div className="kicker home-kicker">Contacto</div>
-              <h2>¿Necesita un arquitecto?</h2>
-              <p className="section-copy home-contact-copy">Cuéntenos qué necesita y le orientamos.</p>
+              <h2>¿Tiene un proyecto en mente?</h2>
+              <p className="section-copy home-contact-copy">Cuéntenos la idea y estudiamos cómo ayudarle.</p>
             </div>
             <Link className="cta-link" to="/contacto">Consultar proyecto</Link>
           </div>
