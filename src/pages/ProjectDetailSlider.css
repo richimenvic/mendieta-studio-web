@@ -17,6 +17,10 @@
   background:var(--soft);
 }
 
+.project-detail-gallery.is-single{
+  grid-template-columns:1fr;
+}
+
 .project-detail-gallery-item,
 .project-detail-gallery-item.is-large{
   position:relative;
@@ -29,6 +33,11 @@
   background:var(--soft);
   cursor:zoom-in;
   overflow:hidden;
+}
+
+.project-detail-gallery.is-single .project-detail-gallery-item{
+  min-height:calc(100vh - 84px);
+  aspect-ratio:auto;
 }
 
 .project-detail-gallery-item img{
@@ -87,6 +96,12 @@
   max-width:560px;
 }
 
+.project-detail-top-nav{
+  display:flex;
+  gap:12px;
+  margin-bottom:clamp(26px,4vw,46px);
+}
+
 .project-detail-info h1{
   max-width:12ch;
   margin-bottom:22px;
@@ -138,14 +153,6 @@
   flex-wrap:wrap;
   align-items:center;
   gap:18px 28px;
-}
-
-.project-detail-arrows{
-  width:100%;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:2px;
 }
 
 .project-detail-arrow{
@@ -265,6 +272,7 @@
 
 @media(max-width:1320px){
   .project-detail-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-detail-gallery.is-single{grid-template-columns:1fr}
 }
 
 @media(max-width:1180px){
@@ -288,11 +296,18 @@
   .project-detail-gallery{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
+  .project-detail-gallery.is-single{
+    grid-template-columns:1fr;
+  }
   .project-detail-gallery-item,
   .project-detail-gallery-item.is-large{
     grid-column:auto;
     min-height:0;
     aspect-ratio:1 / 1;
+  }
+  .project-detail-gallery.is-single .project-detail-gallery-item{
+    min-height:0;
+    aspect-ratio:4 / 3;
   }
   .project-detail-gallery-item span{
     right:10px;
@@ -302,11 +317,13 @@
     opacity:1;
     transform:none;
   }
-  .project-detail-info{padding:52px 0 44px}
+  .project-detail-info{padding:28px 0 44px}
   .project-detail-info-inner{width:min(calc(100% - 32px),var(--max))}
+  .project-detail-top-nav{
+    margin-bottom:24px;
+  }
   .project-detail-facts div{grid-template-columns:1fr;gap:6px}
   .project-detail-actions{gap:14px 22px}
-  .project-detail-arrows{margin-bottom:4px}
   .project-detail-arrow{width:38px;height:38px;font-size:1.18rem}
   .project-lightbox{padding:14px}
   .project-lightbox-content{height:86vh}
